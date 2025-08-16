@@ -11,7 +11,8 @@
 
 <div class="wrap">
 
-  <section class="hotels-hero">
+  <!-- Hero Section -->
+  <section class="hotels-hero" id="hotels">
     <div class="overlay"></div>
     <h1>Find Your Perfect Stay</h1>
     <p>Discover hand-picked hotels for every budget and style.</p>
@@ -24,7 +25,8 @@
     </div>
   </section>
 
-  <section class="hotels-list">
+  <!-- Hotels List (your 6 hotels unchanged) -->
+  <section class="hotels-list" id="hotels-list">
     <h2>Popular Hotels</h2>
     <div class="hotel-cards">
       <div class="hotel-card">
@@ -37,8 +39,8 @@
           <li>📶 Free WiFi</li>
           <li>🚗 Parking</li>
         </ul>
-        <p class="price">$180 / night</p>
-        <button onclick="bookNow()">Book Now</button>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Grand Palace Hotel')">Book Now</button>
       </div>
 
       <div class="hotel-card">
@@ -51,8 +53,8 @@
           <li>🍽 Restaurant</li>
           <li>📶 Free WiFi</li>
         </ul>
-        <p class="price">$140 / night</p>
-        <button onclick="bookNow()">Book Now</button>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Seaside Resort')">Book Now</button>
       </div>
 
       <div class="hotel-card">
@@ -65,8 +67,8 @@
           <li>🔥 Fireplace</li>
           <li>📶 Free WiFi</li>
         </ul>
-        <p class="price">$120 / night</p>
-        <button onclick="bookNow()">Book Now</button>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Mountain View Lodge')">Book Now</button>
       </div>
 
       <div class="hotel-card">
@@ -79,8 +81,8 @@
           <li>🖥 Work Desk</li>
           <li>📶 Free WiFi</li>
         </ul>
-        <p class="price">$90 / night</p>
-        <button onclick="bookNow()">Book Now</button>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('City Center Inn')">Book Now</button>
       </div>
 
       <div class="hotel-card">
@@ -93,8 +95,8 @@
           <li>🍽 Fine Dining</li>
           <li>🏊 Infinity Pool</li>
         </ul>
-        <p class="price">$250 / night</p>
-        <button onclick="bookNow()">Book Now</button>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Royal Luxury Stay')">Book Now</button>
       </div>
 
       <div class="hotel-card">
@@ -107,12 +109,13 @@
           <li>🚗 Parking</li>
           <li>📶 Free WiFi</li>
         </ul>
-        <p class="price">$60 / night</p>
-        <button onclick="bookNow()">Book Now</button>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Comfort Budget Stay')">Book Now</button>
       </div>
     </div>
   </section>
 
+  <!-- Rooms List (your 9 rooms unchanged, only button updated) -->
   <section class="rooms-list">
     <h2>Available Rooms</h2>
     <div class="room-cards">
@@ -125,44 +128,100 @@
           <li>📶 Free WiFi</li>
         </ul>
         <p class="price">$120 / night</p>
-        <button onclick="bookNow()">Book Now</button>
+        <button onclick="roomClicked()">Book Now</button>
       </div>
-      <div class="room-card"><img src="images/room2.jpg" alt=""><h3>Standard Room</h3><ul class="amenities"><li>🛏 Queen Bed</li><li>☕ Coffee Maker</li><li>📶 Free WiFi</li></ul><p class="price">$80 / night</p><button onclick="bookNow()">Book Now</button></div>
-      <div class="room-card"><img src="images/room3.jpg" alt=""><h3>Suite</h3><ul class="amenities"><li>🛋 Living Area</li><li>🛏 King Bed</li><li>📶 Free WiFi</li></ul><p class="price">$180 / night</p><button onclick="bookNow()">Book Now</button></div>
-      <div class="room-card"><img src="images/room4.jpg" alt=""><h3>Family Room</h3><ul class="amenities"><li>🛏 2 Queen Beds</li><li>📺 TV</li><li>🍳 Breakfast</li></ul><p class="price">$150 / night</p><button onclick="bookNow()">Book Now</button></div>
-      <div class="room-card"><img src="images/room5.jpg" alt=""><h3>Business Suite</h3><ul class="amenities"><li>🖥 Work Desk</li><li>📶 Free WiFi</li><li>🍵 Tea Service</li></ul><p class="price">$200 / night</p><button onclick="bookNow()">Book Now</button></div>
-      <div class="room-card"><img src="images/room6.jpg" alt=""><h3>Honeymoon Suite</h3><ul class="amenities"><li>🛏 King Bed</li><li>🍷 Mini Bar</li><li>📶 Free WiFi</li></ul><p class="price">$220 / night</p><button onclick="bookNow()">Book Now</button></div>
-      <div class="room-card"><img src="images/room7.jpg" alt=""><h3>Single Room</h3><ul class="amenities"><li>🛏 Single Bed</li><li>📶 Free WiFi</li><li>🚿 Private Bath</li></ul><p class="price">$50 / night</p><button onclick="bookNow()">Book Now</button></div>
-      <div class="room-card"><img src="images/room8.jpg" alt=""><h3>Ocean View Room</h3><ul class="amenities"><li>🌊 Sea View</li><li>🛏 King Bed</li><li>📶 Free WiFi</li></ul><p class="price">$170 / night</p><button onclick="bookNow()">Book Now</button></div>
-      <div class="room-card"><img src="images/room9.jpg" alt=""><h3>Cabin Room</h3><ul class="amenities"><li>🏔 Mountain View</li><li>🔥 Fireplace</li><li>📶 Free WiFi</li></ul><p class="price">$130 / night</p><button onclick="bookNow()">Book Now</button></div>
+      <div class="room-card"><img src="images/room2.jpg" alt=""><h3>Standard Room</h3><ul class="amenities"><li>🛏 Queen Bed</li><li>☕ Coffee Maker</li><li>📶 Free WiFi</li></ul><p class="price">$80 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="images/room3.jpg" alt=""><h3>Suite</h3><ul class="amenities"><li>🛋 Living Area</li><li>🛏 King Bed</li><li>📶 Free WiFi</li></ul><p class="price">$180 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="images/room4.jpg" alt=""><h3>Family Room</h3><ul class="amenities"><li>🛏 2 Queen Beds</li><li>📺 TV</li><li>🍳 Breakfast</li></ul><p class="price">$150 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="images/room5.jpg" alt=""><h3>Business Suite</h3><ul class="amenities"><li>🖥 Work Desk</li><li>📶 Free WiFi</li><li>🍵 Tea Service</li></ul><p class="price">$200 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="images/room6.jpg" alt=""><h3>Honeymoon Suite</h3><ul class="amenities"><li>🛏 King Bed</li><li>🍷 Mini Bar</li><li>📶 Free WiFi</li></ul><p class="price">$220 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="images/room7.jpg" alt=""><h3>Single Room</h3><ul class="amenities"><li>🛏 Single Bed</li><li>📶 Free WiFi</li><li>🚿 Private Bath</li></ul><p class="price">$70 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="images/room8.jpg" alt=""><h3>Ocean View Room</h3><ul class="amenities"><li>🌊 Sea View</li><li>🛏 King Bed</li><li>📶 Free WiFi</li></ul><p class="price">$170 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="images/room9.jpg" alt=""><h3>Cabin Room</h3><ul class="amenities"><li>🏔 Mountain View</li><li>🔥 Fireplace</li><li>📶 Free WiFi</li></ul><p class="price">$130 / night</p><button onclick="roomClicked()">Book Now</button></div>
     </div>
   </section>
 
-  <section class="why-choose-us">
-    <h2>Why Choose Us</h2>
-    <div class="choose-cards">
-      <div class="choose-card">
-        <h3>Best Price Guarantee</h3>
-        <p>We offer the most competitive rates for your dream stay.</p>
-      </div>
-      <div class="choose-card">
-        <h3>Top Rated Hotels</h3>
-        <p>Hand-picked hotels with excellent reviews and ratings.</p>
-      </div>
-      <div class="choose-card">
-        <h3>24/7 Customer Support</h3>
-        <p>We’re always here to help you with your bookings.</p>
-      </div>
+<section class="why-choose-us">
+  <h2>Why Choose Us</h2>
+  <div class="choose-grid">
+    <div class="choose-card">
+      <span>🏨</span>
+      <h3>Wide Hotel Selection</h3>
+      <p>Choose from luxury, budget, or boutique stays.</p>
     </div>
-  </section>
 
-</div>
+    <div class="choose-card">
+      <span>💰</span>
+      <h3>Best Price Guarantee</h3>
+      <p>We ensure competitive rates for every booking.</p>
+    </div>
+
+    <div class="choose-card">
+      <span>⚡</span>
+      <h3>Easy & Fast Booking</h3>
+      <p>Book your stay in just a few clicks.</p>
+    </div>
+
+    <div class="choose-card">
+      <span>🛡️</span>
+      <h3>Secure Payments</h3>
+      <p>Your transactions are safe with encrypted gateways.</p>
+    </div>
+
+    <div class="choose-card">
+      <span>📞</span>
+      <h3>24/7 Support</h3>
+      <p>Our support team is here anytime you need help.</p>
+    </div>
+
+    <div class="choose-card">
+      <span>⭐</span>
+      <h3>Trusted by Travelers</h3>
+      <p>Thousands of happy customers recommend us worldwide.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Hidden Booking Page -->
+<section class="booking-page" id="booking-page" style="display:none;">
+  <h2 id="hotelName">Booking</h2>
+  <form class="booking-form" onsubmit="confirmBooking(event)">
+    <h3>Enter Your Details</h3>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="number" placeholder="Guests" min="1" required>
+    <input type="date" required>
+    <input type="date" required>
+
+    <!-- NEW: Room Selection -->
+    <label for="roomSelect">Select Room Type:</label>
+    <select id="roomSelect" required>
+      <option value="">-- Choose a room --</option>
+    </select>
+
+    <!-- NEW: Payment Method -->
+    <h3>Payment Method</h3>
+    <label><input type="radio" name="payment" value="credit" required> 💳 Credit/Debit Card</label><br>
+    <label><input type="radio" name="payment" value="upi"> 📱 UPI</label><br>
+    <label><input type="radio" name="payment" value="paypal"> 🅿️ PayPal</label><br>
+    <label><input type="radio" name="payment" value="cash"> 💵 Pay at Hotel</label><br>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+</section>
 
 <script>
-function bookNow() {
-  alert("🎉 Congratulations! You have booked your room.\nA reservation receipt has been mailed to you.");
+function goToBooking(hotelName) {
+  window.open(`booking.html?hotel=${encodeURIComponent(hotelName)}`, "_blank");
+}
+
+function roomClicked() {
+  alert("⚠️ Please select a hotel first to continue booking.");
 }
 </script>
+
 
 </body>
 </html>

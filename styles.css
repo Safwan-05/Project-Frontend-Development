@@ -249,42 +249,46 @@ body {
 }
 
 
-.why-choose-us {
-  padding: 60px 0;
-  background: #f9fafb;
-  border-radius: var(--radius);
-}
+ .why-choose-us {
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1000px;
+    margin: 40px auto;
+  }
 
-.why-choose-us h2 {
-  text-align: center;
-  font-size: 1.75rem;
-  font-weight: 650;
-  margin-bottom: 40px;
-}
+  .why-choose-us h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+  }
 
-.choose-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--gap);
-}
+  .choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 
-.choose-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
+  .choose-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
 
-.choose-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.choose-card p {
-  font-size: 1rem;
-  color: var(--muted);
+  .choose-card span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .choose-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 
 
@@ -300,4 +304,42 @@ body {
   .why-choose-us h2 {
     font-size: 2rem;
   }
+}
+
+.booking-page {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.booking-page h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.booking-form input,
+.booking-form button {
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.booking-form button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.booking-form button:hover {
+  opacity: 0.9;
 }
