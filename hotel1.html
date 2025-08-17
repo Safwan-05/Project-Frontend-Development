@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels | Explore Ease</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hotel.css">
+</head>
+<body>
+  <!-- Navbar -->
+ <nav>
+  <div class="logo">Explore<span>Ease</span></div>
+  <ul class="nav-links">
+    <li><a href="#hero" >Home</a></li>
+    <li><a href="#about">About</a></li>
+
+    <!-- Tour Dropdown -->
+    <li>
+      <a href="#">Tour</a>
+      <ul class="dropdown">
+        <li><a href="tour1.html">Tour Packages</a></li>
+        <li><a href="tour2.html">Tour Booking</a></li>
+      </ul>
+    </li>
+
+    <!-- Destination Dropdown -->
+    <li>
+      <a href="#">Destination</a>
+      <ul class="dropdown">
+        <li><a href="destination1.html">Destination Details</a></li>
+        <li><a href="destination2.html">Booking</a></li>
+      </ul>
+    </li>
+
+    <!-- Hotel Dropdown -->
+    <li>
+      <a href="#" class="active">Hotel</a>
+      <ul class="dropdown">
+        <li><a href="hotel1.html">Hotel Details</a></li>
+        <li><a href="hotel2.html">Hotel Booking</a></li>
+      </ul>
+    </li>
+
+    <!-- Car  -->
+    <li>
+      <a href="car.html">Car</a>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="#testimonial">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <a href="login.html" target="_blank">
+    <li><button class="login-btn">Login / Signup</button></li>
+    </a>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <!-- Hero Section -->
+  <section class="hotels-hero" id="hotels">
+    <div class="overlay"></div>
+    <h1>Find Your Perfect Stay</h1>
+    <p>Discover hand-picked hotels for every budget and style.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Destination">
+      <input type="date">
+      <input type="date">
+      <input type="number" min="1"  placeholder="No.of Guests">
+      <button>Search</button>
+    </div>
+  </section>
+
+  <!-- Hotels List -->
+  <section class="hotels-list" id="hotels-list">
+    <h2>Popular Hotels</h2>
+    <div class="hotel-cards">
+      <div class="hotel-card">
+        <img src="https://i.postimg.cc/wThCJJqq/hotel1.jpg" alt="Hotel View">
+        <h3>Grand Palace Hotel</h3>
+        <p class="rating">⭐⭐⭐⭐⭐</p>
+        <p class="room-types">Deluxe, Suite, Standard</p>
+        <ul class="facilities">
+          <li>🏊 Pool</li>
+          <li>📶 Free WiFi</li>
+          <li>🚗 Parking</li>
+        </ul>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Grand Palace Hotel')">Book Now</button>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://i.postimg.cc/gJZSpFrz/hotel2.jpg" alt="Beach Resort">
+        <h3>Seaside Resort</h3>
+        <p class="rating">⭐⭐⭐⭐</p>
+        <p class="room-types">Ocean View, Standard, Family Suite</p>
+        <ul class="facilities">
+          <li>🌊 Beach Access</li>
+          <li>🍽 Restaurant</li>
+          <li>📶 Free WiFi</li>
+        </ul>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Seaside Resort')">Book Now</button>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://i.postimg.cc/cLxbnbkh/hotel3.jpg" alt="Mountain Lodge">
+        <h3>Mountain View Lodge</h3>
+        <p class="rating">⭐⭐⭐⭐</p>
+        <p class="room-types">Cabin, Deluxe, Honeymoon Suite</p>
+        <ul class="facilities">
+          <li>🏔 Scenic View</li>
+          <li>🔥 Fireplace</li>
+          <li>📶 Free WiFi</li>
+        </ul>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Mountain View Lodge')">Book Now</button>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://i.postimg.cc/VNHp1WRR/hotel4.jpg" alt="City Inn">
+        <h3>City Center Inn</h3>
+        <p class="rating">⭐⭐⭐</p>
+        <p class="room-types">Standard, Business Suite</p>
+        <ul class="facilities">
+          <li>🏙 City View</li>
+          <li>🖥 Work Desk</li>
+          <li>📶 Free WiFi</li>
+        </ul>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('City Center Inn')">Book Now</button>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://i.postimg.cc/G2WfT36T/hotel5.jpg" alt="Luxury Stay">
+        <h3>Royal Luxury Stay</h3>
+        <p class="rating">⭐⭐⭐⭐⭐</p>
+        <p class="room-types">Presidential Suite, Deluxe, Standard</p>
+        <ul class="facilities">
+          <li>🛎 24/7 Service</li>
+          <li>🍽 Fine Dining</li>
+          <li>🏊 Infinity Pool</li>
+        </ul>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Royal Luxury Stay')">Book Now</button>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://i.postimg.cc/R03G1577/hotel6.jpg" alt="Budget Stay">
+        <h3>Comfort Budget Stay</h3>
+        <p class="rating">⭐⭐⭐</p>
+        <p class="room-types">Single, Twin, Family</p>
+        <ul class="facilities">
+          <li>🍳 Breakfast Included</li>
+          <li>🚗 Parking</li>
+          <li>📶 Free WiFi</li>
+        </ul>
+        <p class="price">Starting from $80 / night</p>
+        <button onclick="goToBooking('Comfort Budget Stay')">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms List -->
+  <section class="rooms-list">
+    <h2>Available Rooms</h2>
+    <div class="room-cards">
+      <div class="room-card">
+        <img src="https://i.postimg.cc/XvX12yby/room1.jpg" alt="Deluxe Room">
+        <h3>Deluxe Room</h3>
+        <ul class="amenities">
+          <li>🛏 King Bed</li>
+          <li>📺 Smart TV</li>
+          <li>📶 Free WiFi</li>
+        </ul>
+        <p class="price">$120 / night</p>
+        <button onclick="roomClicked()">Book Now</button>
+      </div>
+      <!-- ... other 8 rooms unchanged ... -->
+       <div class="room-card"><img src="https://i.postimg.cc/xd7xBTfp/room2.jpg" alt=""><h3>Standard Room</h3><ul class="amenities"><li>🛏 Queen Bed</li><li>☕ Coffee Maker</li><li>📶 Free WiFi</li></ul><p class="price">$80 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="https://i.postimg.cc/RhxPVsnc/room3.jpg" alt=""><h3>Suite</h3><ul class="amenities"><li>🛋 Living Area</li><li>🛏 King Bed</li><li>📶 Free WiFi</li></ul><p class="price">$180 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="https://i.postimg.cc/RhxPVsnc/room3.jpg" alt=""><h3>Family Room</h3><ul class="amenities"><li>🛏 2 Queen Beds</li><li>📺 TV</li><li>🍳 Breakfast</li></ul><p class="price">$150 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="https://i.postimg.cc/KvF96Wbb/room5.jpg" alt=""><h3>Business Suite</h3><ul class="amenities"><li>🖥 Work Desk</li><li>📶 Free WiFi</li><li>🍵 Tea Service</li></ul><p class="price">$200 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="https://i.postimg.cc/pVQCJBF6/room6.jpg" alt=""><h3>Honeymoon Suite</h3><ul class="amenities"><li>🛏 King Bed</li><li>🍷 Mini Bar</li><li>📶 Free WiFi</li></ul><p class="price">$220 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="https://i.postimg.cc/FsZPNxFL/room7.jpg" alt=""><h3>Single Room</h3><ul class="amenities"><li>🛏 Single Bed</li><li>📶 Free WiFi</li><li>🚿 Private Bath</li></ul><p class="price">$70 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="https://i.postimg.cc/K880zg4s/room8.jpg" alt=""><h3>Ocean View Room</h3><ul class="amenities"><li>🌊 Sea View</li><li>🛏 King Bed</li><li>📶 Free WiFi</li></ul><p class="price">$170 / night</p><button onclick="roomClicked()">Book Now</button></div>
+      <div class="room-card"><img src="https://i.postimg.cc/CxrmfLqM/room9.jpg" alt=""><h3>Cabin Room</h3><ul class="amenities"><li>🏔 Mountain View</li><li>🔥 Fireplace</li><li>📶 Free WiFi</li></ul><p class="price">$130 / night</p><button onclick="roomClicked()">Book Now</button></div>
+    </div>
+    </div>
+  </section>
+
+<section class="why-choose-us">
+  <h2>Why Choose Us</h2>
+  <div class="choose-grid">
+    <div class="choose-card">
+      <span>🏨</span>
+      <h3>Wide Hotel Selection</h3>
+      <p>Choose from luxury, budget, or boutique stays.</p>
+    </div>
+    <div class="choose-card">
+      <span>💰</span>
+      <h3>Best Price Guarantee</h3>
+      <p>We ensure competitive rates for every booking.</p>
+    </div>
+    <div class="choose-card">
+      <span>⚡</span>
+      <h3>Easy & Fast Booking</h3>
+      <p>Book your stay in just a few clicks.</p>
+    </div>
+    <div class="choose-card">
+      <span>🛡️</span>
+      <h3>Secure Payments</h3>
+      <p>Your transactions are safe with encrypted gateways.</p>
+    </div>
+    <div class="choose-card">
+      <span>📞</span>
+      <h3>24/7 Support</h3>
+      <p>Our support team is here anytime you need help.</p>
+    </div>
+    <div class="choose-card">
+      <span>⭐</span>
+      <h3>Trusted by Travelers</h3>
+      <p>Thousands of happy customers recommend us worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="footer"> 
+  <div class="container footer-grid">
+    <div class="f-brand">
+       <div class="logo">Explore<span>Ease</span></div>
+       <br>
+      <p class="muted small" style="font-size: 13px;">Love Street, Muscat, Oman<br/>example@exoloreease.com</p>
+    </div>
+    <div class="f-col">
+      <h4 style="color: #FF9F1C;">Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Travel Guides</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4 style="color: #FF9F1C;">Key Destinations</h4>
+      <ul>
+        <li><a href="#">Los Angeles</a></li>
+        <li><a href="#">New York City</a></li>
+        <li><a href="#">San Francisco</a></li>
+        <li><a href="#">London</a></li>
+      </ul>
+    </div>
+    <div class="f-news">
+      <h4 style="color: #FF9F1C;">Newsletter</h4>
+      <form class="newsletter" onsubmit="return false">
+        <input type="email" placeholder="Enter email address"/>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="container">
+      <p style="font-size: 13px;">© 2025 ExploreEase. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function goToBooking(hotelName) {
+  // open hotel2.html with hotel name in query string
+  window.location.href = `hotel2.html?hotel=${encodeURIComponent(hotelName)}`;
+}
+
+function roomClicked() {
+  alert("⚠️ Please select a hotel first to continue booking.");
+}
+</script>
+
+</body>
+</html>
+

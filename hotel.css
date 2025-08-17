@@ -1,0 +1,730 @@
+:root {
+  --accent: #FF9F1C;
+  --dark: #0f1724;
+  --muted: #6b7280;
+  --maxw: 1200px;
+  --radius: 12px;
+  --gap: 20px;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+  line-height: 1.5;
+  background: #fff;
+}
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--white);
+  }
+
+  .logo span {
+    color: var(--accent);
+  }
+
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size:13px;
+  }
+
+  ul.nav-links li {
+    position: relative; /* Important for stable dropdown */
+    list-style: none;
+  }
+
+  ul.nav-links li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 13px;
+    padding: 20px 15px;
+    display: block;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  ul.nav-links li a:hover,
+  ul.nav-links li a.active {
+    color: var(--accent);
+  }
+
+  /* Dropdown */
+  ul.nav-links li ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* directly under parent li */
+    left: 0;
+    background-color: var(--dark);
+    min-width: 150px;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 100;
+    list-style: none;
+    padding: 5px 0; /* add some padding so cursor move safe */
+  }
+
+  /* Show dropdown on hover */
+  ul.nav-links li:hover > ul.dropdown {
+    display: block;
+  }
+
+  ul.nav-links li ul.dropdown li a {
+    padding: 10px 15px;
+    display: block;
+    color: var(--white);
+  }
+
+  ul.nav-links li ul.dropdown li a:hover {
+    color: var(--accent);
+  }
+
+  .login-btn {
+    color: var(--white);
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 13px;
+  }
+
+  .login-btn:active {
+    background-color: transparent;
+    color: var(--accent);
+  }
+
+/* Footer */
+.footer {
+  background: #000;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.footer .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer .logo .ease {
+  color: var(--accent);
+}
+
+.footer-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 1.4fr;
+  padding: 36px 0;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+.f-col h4, .f-news h4 {
+  margin: 0 0 0.6rem;
+  color: #fff;
+}
+
+.f-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  display: grid;
+  font-size: 13px;
+  gap: 0.35rem;
+}
+/* Newsletter */
+.newsletter {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.3rem;
+
+}
+.newsletter input {
+  flex: 1;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: black;
+  color: #fff;
+  padding: 0.8rem 0.9rem;
+  outline: none;
+}
+
+.newsletter button {
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter button:hover {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Copy section */
+.copy {
+  border-top: 1px solid gainsboro;
+}
+
+.copy p {
+  margin: 0;
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+}
+
+
+/* Contact us */
+
+.contact .container {
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 100px;
+}
+
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Left Side Image */
+.contact-image {
+  flex: 1 1 45%;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Right Side Form */
+.contact-form {
+  flex: 1 1 50%;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.ctext {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Form Styling */
+.form-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.left4 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 15px;
+}
+
+.input,
+.textinput {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #FF9F1C;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.textinput {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Send Button */
+.send {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #FF9F1C;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send:hover {
+  background: transparent;
+  border: 1px solid #FF9F1C;
+  color: #FF9F1C;
+}
+
+/* padding about us and destination */
+.section,.why {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.section{
+ margin-top: 100px;
+  margin-bottom: 100px;
+}
+.why {
+ margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+
+.hotels-hero {
+  background: url("https://i.postimg.cc/PxCG8Rx9/hero.jpg") center/cover no-repeat;
+  position: relative;
+  color: var(--white);
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: var(--radius);
+  margin-top: 20px;
+}
+
+.hotels-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius);
+}
+
+.hotels-hero h1 {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 650;
+  margin-bottom: 5px;
+}
+
+.hotels-hero p {
+  position: relative;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.search-bar input,
+.search-bar button {
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 140px;
+}
+
+.search-bar button {
+  background-color: var(--accent);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.search-bar button:hover {
+  opacity: 0.9;
+}
+
+
+.hotels-list {
+  padding: 60px 0;
+}
+
+.hotels-list h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 650;
+  margin-bottom: 40px;
+}
+
+.hotel-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+}
+
+.hotel-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.hotel-card:hover {
+  transform: scale(1.03);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.hotel-card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.rating {
+  color: gold;
+  margin-bottom: 5px;
+}
+
+.room-types {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.facilities {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--accent);
+  margin: 8px 0;
+}
+
+.hotel-card button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.hotel-card button:hover {
+  opacity: 0.9;
+}
+
+
+.rooms-list {
+  padding: 60px 0;
+}
+
+.rooms-list h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 650;
+  margin-bottom: 40px;
+}
+
+.room-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+}
+
+.room-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+  transform: scale(1.03);
+}
+
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.room-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.amenities {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 5px 0;
+}
+
+.room-card .price {
+  font-weight: bold;
+  color: var(--accent);
+  margin: 8px 0;
+}
+
+.room-card button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.room-card button:hover {
+  opacity: 0.9;
+}
+
+
+ .why-choose-us {
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1000px;
+    margin: 40px auto;
+  }
+
+  .why-choose-us h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  .choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .choose-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .choose-card span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .choose-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .hotels-hero h1 {
+    font-size: 2.2rem;
+  }
+  .hotels-hero p {
+    font-size: 1rem;
+  }
+  .hotels-list h2,
+  .rooms-list h2,
+  .why-choose-us h2 {
+    font-size: 2rem;
+  }
+}
+
+.booking-page {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.booking-page h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.booking-form input,
+.booking-form button {
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.booking-form button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.booking-form button:hover {
+  opacity: 0.9;
+}
+.hotel-cards,
+.room-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
+  gap: var(--gap);
+}
+
+/* Responsive for tablets and mobile */
+@media (max-width: 992px) {
+  .hotel-cards,
+  .room-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .hotel-cards,
+  .room-cards {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
+.booking-page {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.booking-page h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px; /* widened */
+  margin: 30px auto;
+}
+
+.booking-form input,
+.booking-form button,
+.booking-form select {
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.booking-form button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.booking-form button:hover {
+  opacity: 0.9;
+}
+
+/* New row styling for inputs */
+.form-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+}
+
+/* Payment method compact styling */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* less spacing */
+  align-items: flex-start;
+}
+
+.payment-options label {
+  font-size: 0.95rem;
+}
+.form-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap; /* ✅ allows wrapping if too tight */
+}
+
+.form-row input,
+.form-row select {
+  flex: 1 1 0;   /* ✅ all inputs share equal space */
+  min-width: 0;  /* ✅ prevent overflowing */
+}
