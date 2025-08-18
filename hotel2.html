@@ -57,7 +57,6 @@
   <ul class="nav-links">
     <li><a href="#hero" >Home</a></li>
     <li><a href="#about">About</a></li>
-
     <!-- Tour Dropdown -->
     <li>
       <a href="#">Tour</a>
@@ -66,7 +65,6 @@
         <li><a href="tour2.html">Tour Booking</a></li>
       </ul>
     </li>
-
     <!-- Destination Dropdown -->
     <li>
       <a href="#">Destination</a>
@@ -75,7 +73,6 @@
         <li><a href="destination2.html">Booking</a></li>
       </ul>
     </li>
-
     <!-- Hotel Dropdown -->
     <li>
       <a href="#" class="active">Hotel</a>
@@ -84,53 +81,43 @@
         <li><a href="hotel2.html">Hotel Booking</a></li>
       </ul>
     </li>
-
     <!-- Car  -->
-    <li>
-      <a href="car.html">Car</a>
-    </li>
+    <li><a href="car.html">Car</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="#testimonial">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
     <a href="login.html" target="_blank">
-    <li><button class="login-btn">Login / Signup</button></li>
+      <li><button class="login-btn">Login / Signup</button></li>
     </a>
   </ul>
 </nav>
-
-
 
 <section class="booking-page" id="booking-page">
   <h2 id="hotelName">Booking</h2>
   <form class="booking-form" onsubmit="confirmBooking(event)">
     <h3>Enter Your Details</h3>
 
-    <!-- Name, Email, Guests in one row -->
     <div class="form-row">
       <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Email Address" required>
       <input type="number" placeholder="Guests" min="1" required>
     </div>
 
-    <!-- Check-in and Check-out in one row -->
     <div class="form-row">
       <label>Check-in:</label>
-      <input type="date" id="checkin" required onchange="updatePrice()">
+      <input type="date" id="checkin" required onchange="setCheckoutMin(); updatePrice();">
       <label>Check-out:</label>
       <input type="date" id="checkout" required onchange="updatePrice()">
     </div>
 
-    <!-- Room Selection -->
     <label for="roomSelect">Select Room Type:</label>
     <select id="roomSelect" required onchange="updatePrice()">
       <option value="">-- Choose a room --</option>
     </select>
 
-    <!-- Price and nights info -->
     <p id="roomPrice" style="font-weight:bold; color:#333;"></p>
     <p id="totalPrice" style="font-weight:bold; color:darkgreen;"></p>
 
-    <!-- Payment Method -->
     <h3>Payment Method</h3>
     <div class="payment-options">
       <label><input type="radio" name="payment" value="credit" required> 💳 Credit/Debit Card</label>
@@ -170,6 +157,15 @@ if (hotelRooms[hotelName]) {
   });
 }
 
+// Restrict dates
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("checkin").setAttribute("min", today);
+
+function setCheckoutMin() {
+  const checkin = document.getElementById("checkin").value;
+  document.getElementById("checkout").setAttribute("min", checkin);
+}
+
 // Helper: calculate nights
 function getNights() {
   const checkin = document.getElementById("checkin").value;
@@ -183,7 +179,7 @@ function getNights() {
   return 0;
 }
 
-// Show price when room/dates selected
+// Show price
 function updatePrice() {
   const selectedRoom = roomSelect.value;
   const priceEl = document.getElementById("roomPrice");
@@ -220,7 +216,7 @@ Payment: ${paymentMethod}`);
 </script>
 
 <!-- Footer -->
-  <footer class="footer"> 
+<footer class="footer"> 
   <div class="container footer-grid">
     <div class="f-brand">
        <div class="logo">Explore<span>Ease</span></div>
@@ -254,12 +250,10 @@ Payment: ${paymentMethod}`);
     </div>
   </div>
   <div class="copy">
-   
     <div class="container">
       <p style="font-size: 13px;">© 2025 ExploreEase. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
-
 </body>
 </html>
