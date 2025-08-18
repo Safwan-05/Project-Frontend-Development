@@ -10,52 +10,60 @@
 </head>
 <body>
   <!-- Navbar -->
- <nav>
-  <div class="logo">Explore<span>Ease</span></div>
-  <ul class="nav-links">
-    <li><a href="#hero" >Home</a></li>
-    <li><a href="#about">About</a></li>
+  <nav>
+    <div class="logo">Explore<span>Ease</span></div>
 
-    <!-- Tour Dropdown -->
-    <li>
-      <a href="#">Tour</a>
-      <ul class="dropdown">
-        <li><a href="tour1.html">Tour Packages</a></li>
-        <li><a href="tour2.html">Tour Booking</a></li>
-      </ul>
-    </li>
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-    <!-- Destination Dropdown -->
-    <li>
-      <a href="#">Destination</a>
-      <ul class="dropdown">
-        <li><a href="destination1.html">Destination Details</a></li>
-        <li><a href="destination2.html">Booking</a></li>
-      </ul>
-    </li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" >Home</a></li>
+      <li><a href="#about">About</a></li>
 
-    <!-- Hotel Dropdown -->
-    <li>
-      <a href="#" class="active">Hotel</a>
-      <ul class="dropdown">
-        <li><a href="hotel1.html">Hotel Details</a></li>
-        <li><a href="hotel2.html">Hotel Booking</a></li>
-      </ul>
-    </li>
+      <!-- Tour Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Tour</a>
+        <ul class="dropdown">
+          <li><a href="tour1.html">Tour Packages</a></li>
+          <li><a href="tour2.html">Tour Booking</a></li>
+        </ul>
+      </li>
 
-    <!-- Car  -->
-    <li>
-      <a href="car.html">Car</a>
-    </li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="#testimonial">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <a href="login.html" target="_blank">
-    <li><button class="login-btn">Login / Signup</button></li>
-    </a>
-  </ul>
-</nav>
+      <!-- Destination Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Destination</a>
+        <ul class="dropdown">
+          <li><a href="destination1.html">Destination Details</a></li>
+          <li><a href="destination2.html">Booking</a></li>
+        </ul>
+      </li>
 
+      <!-- Hotel Dropdown -->
+      <li class="has-dropdown">
+        <a href="#" class="active">Hotel</a>
+        <ul class="dropdown">
+          <li><a href="hotel1.html">Hotel Details</a></li>
+          <li><a href="hotel2.html">Hotel Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Car  -->
+      <li><a href="car.html">Car</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#testimonial">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      <li>
+        <a href="login.html" target="_blank">
+          <button class="login-btn">Login / Signup</button>
+        </a>
+      </li>
+    </ul>
+  </nav>
 <div class="wrap">
 
   <!-- Hero Section -->
@@ -98,7 +106,6 @@
         <ul class="facilities">
           <li>🌊 Beach Access</li>
           <li>🍽 Restaurant</li>
-          <li>📶 Free WiFi</li>
         </ul>
         <p class="price">Starting from $80 / night</p>
         <button onclick="goToBooking('Seaside Resort')">Book Now</button>
@@ -140,7 +147,6 @@
         <ul class="facilities">
           <li>🛎 24/7 Service</li>
           <li>🍽 Fine Dining</li>
-          <li>🏊 Infinity Pool</li>
         </ul>
         <p class="price">Starting from $80 / night</p>
         <button onclick="goToBooking('Royal Luxury Stay')">Book Now</button>
@@ -152,7 +158,6 @@
         <p class="rating">⭐⭐⭐</p>
         <p class="room-types">Single, Twin, Family</p>
         <ul class="facilities">
-          <li>🍳 Breakfast Included</li>
           <li>🚗 Parking</li>
           <li>📶 Free WiFi</li>
         </ul>
@@ -178,7 +183,18 @@
         <button onclick="roomClicked()">Book Now</button>
       </div>
       <!-- ... other 8 rooms unchanged ... -->
-       <div class="room-card"><img src="https://i.postimg.cc/xd7xBTfp/room2.jpg" alt=""><h3>Standard Room</h3><ul class="amenities"><li>🛏 Queen Bed</li><li>☕ Coffee Maker</li><li>📶 Free WiFi</li></ul><p class="price">$80 / night</p><button onclick="roomClicked()">Book Now</button></div>
+       <div class="room-card">
+        <img src="https://i.postimg.cc/xd7xBTfp/room2.jpg" alt="">
+        <h3>Standard Room</h3>
+        <ul class="amenities">
+          <ul class="amenities">
+            <li><span class="icon">🛏</span> Queen Bed</li>
+            <li><span class="icon">📶</span> Free WiFi</li>
+</ul>
+
+        </ul>
+        <p class="price">$80 / night</p>
+        <button onclick="roomClicked()">Book Now</button></div>
       <div class="room-card"><img src="https://i.postimg.cc/RhxPVsnc/room3.jpg" alt=""><h3>Suite</h3><ul class="amenities"><li>🛋 Living Area</li><li>🛏 King Bed</li><li>📶 Free WiFi</li></ul><p class="price">$180 / night</p><button onclick="roomClicked()">Book Now</button></div>
       <div class="room-card"><img src="https://i.postimg.cc/RhxPVsnc/room3.jpg" alt=""><h3>Family Room</h3><ul class="amenities"><li>🛏 2 Queen Beds</li><li>📺 TV</li><li>🍳 Breakfast</li></ul><p class="price">$150 / night</p><button onclick="roomClicked()">Book Now</button></div>
       <div class="room-card"><img src="https://i.postimg.cc/KvF96Wbb/room5.jpg" alt=""><h3>Business Suite</h3><ul class="amenities"><li>🖥 Work Desk</li><li>📶 Free WiFi</li><li>🍵 Tea Service</li></ul><p class="price">$200 / night</p><button onclick="roomClicked()">Book Now</button></div>
@@ -226,46 +242,97 @@
   </div>
 </section>
 
-<!-- Footer -->
-  <footer class="footer"> 
-  <div class="container footer-grid">
-    <div class="f-brand">
-       <div class="logo">Explore<span>Ease</span></div>
-       <br>
-      <p class="muted small" style="font-size: 13px;">Love Street, Muscat, Oman<br/>example@exoloreease.com</p>
+<!-- footer -->
+
+<footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Logo / About -->
+    <div class="f-col fade-col">
+      <div class="logo">Explore<span class="ease">Ease</span></div>
+      <p style="margin-top:10px; font-size:14px; color:#aaa;">
+        Explore the world with us. Discover amazing tours, hotels, and destinations tailored just for you.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-    <div class="f-col">
-      <h4 style="color: #FF9F1C;">Company</h4>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Travel Guides</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-      </ul>
-    </div>
-    <div class="f-col">
-      <h4 style="color: #FF9F1C;">Key Destinations</h4>
-      <ul>
-        <li><a href="#">Los Angeles</a></li>
-        <li><a href="#">New York City</a></li>
-        <li><a href="#">San Francisco</a></li>
-        <li><a href="#">London</a></li>
-      </ul>
-    </div>
-    <div class="f-news">
-      <h4 style="color: #FF9F1C;">Newsletter</h4>
-      <form class="newsletter" onsubmit="return false">
-        <input type="email" placeholder="Enter email address"/>
-        <button type="submit">Submit</button>
-      </form>
+
+   <!-- Quick Links -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-link"></i> Quick Links</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Travel Guide</a></li>
+    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+  </ul>
+</div>
+
+<!-- Services -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-cogs"></i> Services</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Tour Packages</a></li>
+    <li><a href="#"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+    <li><a href="#"><i class="fas fa-passport"></i> Travel Insurance</a></li>
+    <li><a href="#"><i class="fas fa-user-tie"></i> Travel Assistance</a></li>
+  </ul>
+</div>
+
+
+    <!-- Newsletter -->
+    <div class="f-col fade-col">
+      <h4><i class="fas fa-envelope"></i> Newsletter</h4>
+      <p style="font-size:14px; color:#aaa;">Subscribe to get latest offers and updates.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter Your Email">
+        <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </div>
     </div>
   </div>
+
   <div class="copy">
-    <div class="container">
-      <p style="font-size: 13px;">© 2025 ExploreEase. All Rights Reserved.</p>
-    </div>
+    <p>&copy; 2025 TravelGo. All Rights Reserved.</p>
   </div>
+  
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeCols = document.querySelectorAll(".fade-col");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add stagger using index
+          const index = [...fadeCols].indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, index * 200); // 200ms delay per column
+        } else {
+          // Remove class when leaving viewport so it can animate again
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    fadeCols.forEach(col => observer.observe(col));
+  });
+</script>
+
+
+
+
+
+
+
+
+
+  
+  <script src="header-footer.js"></script>
 
 <script>
 function goToBooking(hotelName) {

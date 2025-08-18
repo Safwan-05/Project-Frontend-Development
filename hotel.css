@@ -117,6 +117,19 @@ nav {
   }
 
 /* Footer */
+
+/* Initial hidden state */
+.fade-col {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-col.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .footer {
   background: #000;
   color: #fff;
@@ -394,9 +407,14 @@ nav {
 
 .hotel-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(500px, 550px));
+  gap: 20px;
+
+  max-width: 1000px;   /* ✅ limit container width */
+  margin: 0 auto;      /* ✅ center container itself */
+  justify-content: center;
 }
+
 
 .hotel-card {
   background: var(--white);
@@ -405,7 +423,9 @@ nav {
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease;
+  max-width: 700px; /* keeps cards from growing too big */
 }
+
 
 .hotel-card:hover {
   transform: scale(1.03);
@@ -418,7 +438,7 @@ nav {
 }
 
 .hotel-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   margin-top: 10px;
   font-weight: 700;
 }
@@ -478,9 +498,14 @@ nav {
 
 .room-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(500px, 550px));
+  gap: 20px;
+
+  max-width: 1000px;   /* ✅ limit container width */
+  margin: 0 auto;      /* ✅ center container itself */
+  justify-content: center;
 }
+
 
 .room-card {
   background: var(--white);
@@ -489,6 +514,7 @@ nav {
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease;
+  max-width: 700px; /* keeps cards from growing too big */
 }
 
 .room-card:hover {
@@ -502,7 +528,7 @@ nav {
 }
 
 .room-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.0rem;
   font-weight: 700;
   margin-top: 10px;
 }
@@ -517,6 +543,20 @@ nav {
   color: var(--muted);
   margin: 5px 0;
 }
+.amenities li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.amenities .icon {
+  display: inline-block;
+  width: 1.5em;   /* equal space for every emoji */
+  text-align: center;
+}
+
+
+
 
 .room-card .price {
   font-weight: bold;
@@ -569,7 +609,9 @@ nav {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
-
+  .choose-card h3{
+    font-size: 1.0rem;
+  }
   .choose-card span {
     font-size: 2rem;
     display: block;
@@ -604,6 +646,7 @@ nav {
 .booking-page h2 {
   font-size: 2rem;
   margin-bottom: 30px;
+  color: #ffa31a;
 }
 
 .booking-form {
@@ -612,6 +655,8 @@ nav {
   gap: 15px;
   max-width: 400px;
   margin: 30px auto;
+
+  
 }
 
 .booking-form input,
@@ -728,3 +773,18 @@ nav {
   flex: 1 1 0;   /* ✅ all inputs share equal space */
   min-width: 0;  /* ✅ prevent overflowing */
 }
+.booking-page {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.booking-form {
+  background: transparent !important;  /* remove inner white box */
+  box-shadow: none !important;         /* remove any hidden shadow */
+  border: none !important;             /* optional, if border looks white */
+}
+
