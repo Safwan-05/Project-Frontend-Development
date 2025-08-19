@@ -20,6 +20,49 @@ body {
   line-height: 1.5;
   background: #fff;
 }
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.topbar .wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar .left {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* spacing between phone & email */
+  color: #000;
+}
+
+.topbar .left i {
+  margin-right: 6px; /* space between icon & text */
+  color: #000; /* black icons like in your screenshot */
+}
+
+.topbar .right {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* spacing between social icons */
+}
+
+.topbar .right a {
+  color: #000; /* black social icons */
+  font-size: 14px;
+  transition: color 0.2s ease-in-out;
+}
+
+.topbar .right a:hover {
+  color: #f7931e; /* orange hover */
+}
+
 /* NAVBAR */
 nav {
     position: sticky;
