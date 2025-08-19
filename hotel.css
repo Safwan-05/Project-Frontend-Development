@@ -97,8 +97,10 @@ nav {
   }
 
   ul.nav-links li ul.dropdown li a:hover {
-    color: var(--accent);
-  }
+  background-color: var(--accent); /* orange block */
+  color: var(--white); /* keep text visible */
+  border-radius: 4px; /* optional rounded corners */
+}
 
   .login-btn {
     color: var(--white);
@@ -111,7 +113,7 @@ nav {
     font-size: 13px;
   }
 
-  .login-btn:active {
+  .login-btn:hover {
     background-color: transparent;
     color: var(--accent);
   }
