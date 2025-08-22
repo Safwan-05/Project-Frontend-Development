@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ExploreEase-Tour Package Detail</title>
+<!-- Google Fonts: Poppins for headings, Open Sans for body -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="header-footer.css" rel="stylesheet"/>
+<style>
+    /* =====================================================
+   TOUR BOOKING PAGE 
+   ===================================================== */
+:root{
+  --bg:#ffffff;
+  --text:#2a2f36;
+  --muted:#6f7683;
+  --line:#e9eef3;
+  --accent:#FF9F1C;
+  --accent-weak:#ffead1;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:#fafbfd;
+  color:var(--text);
+  font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* Page wrapper & grid */
+.page{max-width:1100px;margin:24px auto;padding:0 16px;}
+.grid{display:grid;grid-template-columns:1fr 320px; padding-left: 100px; margin-top: 60px;}
+@media (max-width:1000px){.grid{grid-template-columns:1fr}}
+
+/* Headings */
+h1,h2,h3,h4{font-family:"Poppins","Open Sans",sans-serif;margin:0 0 10px}
+h1.title{font-size:23px;line-height:1.25;margin-top:10px;margin-bottom:12px}
+.section>h2{font-size:18px;margin-bottom:12px}
+.section h3{font-size:16px}
+
+.hero1 {
+    background: url('https://static.hudl.com/users/temp/5538933_faae310e048840638c41d781fb6fdbbc.jpg') center/cover no-repeat;
+    position: relative;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero1 .overlay1 {
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 100px;
+    color: #fff;
+}
+
+
+
+
+
+
+/* Hero image */
+.hero{margin:0 0 12px;position:relative;background:#fff}
+.hero img{width:100%;display:block;max-height:340px;object-fit:cover; border-radius: 5px;}
+.media-tags{position:absolute;right:10px;bottom:10px;display:flex;gap:8px}
+.media-tags .tag{
+  font:600 12px "Poppins",sans-serif;
+  padding:6px 10px;border-radius:6px;background:var(--accent); border: 1px solid #FF9F1C;
+  cursor:pointer;
+}
+
+/* meta row under image */
+.meta-row.small{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:12px}
+.meta-row .map-link{color:var(--accent);text-decoration:none}
+
+/* Facts list 
+.facts{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:10px 0 18px;padding:12px;border:1px solid var(--line);background:#fff}
+.facts .label{display:block;color:var(--muted);font-size:11px}
+.facts .value{font-weight:600}
+.facts .muted{color:var(--muted);font-weight:400}
+*/
+
+
+/* Facts list */
+/* Facts list */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin: 10px 0 18px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  background: #fff;  box-sizing: border-box;
+}
+
+.facts li {
+  list-style: none;
+  font-size: 13px; /* overall small size */
+  display: flex;
+  flex-direction: column;
+   align-items: center; /* horizontal center */
+  justify-content: center;
+}
+
+.facts li i {
+  color: var(--primary, #FF9F1C); /* brand color */
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.facts .label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.facts .value {
+  font-weight: 600;
+  font-size: 12px; /* smaller value text */
+}
+
+.facts .muted {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 11px;
+}
+
+
+/* Section wrapper */
+.section{padding:16px;border:1px solid var(--line);background:#fff;margin-bottom:16px;border-radius:6px}
+.section.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:700px){.section.two-col{grid-template-columns:1fr}}
+.section p{margin:0 0 10px}
+
+/* Included/Excluded ticks */
+.ticks, .cross { list-style:none; padding:0; margin:0; }
+
+.ticks li, .cross li {
+  position: relative;
+  padding-left: 22px;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* Tick and Cross */
+.ticks li.ok::before {
+  content: '✓'; /* Tick icon */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent); /* Accent color for tick */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cross li.no::before {
+  content: '✗'; /* Cross icon */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #d33; /* Red color for cross */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Optional: text color */
+.ticks li.ok { color: #27323f; font-size: 15px;}
+.cross li.no { color: #6b7480;  font-size: 15px;}
+
+
+/* Accordion */
+.accordion .item{border:1px solid var(--line);border-radius:6px;margin-bottom:8px;overflow:hidden;background:#fff}
+.accordion summary{
+  list-style:none;cursor:pointer;padding:12px 14px;background:#f8fafc;
+  display:flex;align-items:center;gap:10px;font-weight:600
+}
+.accordion summary::-webkit-details-marker{display:none}
+.badge{display:inline-block;background:var(--accent-weak);color: #FF9F1C;border-radius:4px;padding:2px 6px;font:600 12px "Poppins",sans-serif}
+.item-body{padding:12px 14px;border-top:1px solid var(--line)}
+.dotlist{margin:8px 0 0 18px; }
+.dotlist li{margin:4px 0}
+
+
+/* Map */
+.map-wrap{border:1px solid var(--line);height:300px;overflow:hidden;border-radius:6px}
+.map-wrap iframe{width:100%;height:100%;border:0}
+
+/* Score Card */
+    .reviews-grid{display:grid;grid-template-columns:160px 1fr;gap:20px}
+    .score-card{width:160px;height:120px;border:1px solid #ddd;border-radius:10px;background:#fff;
+      display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .score-card .big{font:700 40px Poppins,sans-serif;color:#FF9F1C;line-height:1}
+    .score-card .small{font-size:12px;color:#6f7683}
+    .bars .bar{display:grid;grid-template-columns:1fr 320px;gap:10px;align-items:center;margin:10px 0}
+    .bars .track{position:relative;height:6px;background:#eef2f6;border-radius:10px;overflow:hidden}
+    .bars .track i{display:block;height:100%;background:#FF9F1C}
+    .bars .track b{position:absolute;right:6px;top:-18px;font-size:11px;color:#6f7683}
+
+    /* Review */
+    .review{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start;margin:12px 0}
+    .review .avatar{width:56px;height:56px;border-radius:50%;object-fit:cover}
+    .review .review-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .review .who h4{font:600 14px Poppins,sans-serif;margin:0}
+    .review .date{font-size:12px;color:#6f7683;margin-left:8px}
+    .stars span{font-size:22px;color:#ccc;cursor:pointer;margin-right:4px;transition:color 0.2s}
+    .stars span.active{color:#ffb400}
+
+    /* Review Form */
+    .review-form .rating-rows{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+    .review-form label{display:flex;align-items:center;justify-content:space-between;border:1px solid #eee;padding:8px 10px;border-radius:6px;background:#fafcff}
+    .review-form .inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    .review-form input,.review-form textarea{
+      width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
+    }
+    .review-form label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* text aur stars ke beech thoda space */
+  white-space: nowrap;
+}
+
+.review-form label .stars {
+  flex-shrink: 0;
+}
+
+    .review-form textarea{grid-column:1/-1}
+    .btn{background:#FF9F1C;color:#fff;border:none;border-radius:8px;padding:10px 18px;font:600 14px Poppins,sans-serif;cursor:pointer}
+    .btn.wide{width:100%}
+
+
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* Facts grid responsiveness */
+@media (max-width: 992px) {
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Reviews grid responsive */
+@media (max-width: 800px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .score-card {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 16px;
+  }
+  .bars .bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Review item responsiveness */
+@media (max-width: 600px) {
+  .review {
+    grid-template-columns: 40px 1fr;
+    gap: 8px;
+  }
+  .review .avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Review form responsiveness */
+@media (max-width: 700px) {
+  .review-form .rating-rows,
+  .review-form .inputs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar card responsiveness */
+@media (max-width: 1000px) {
+  .sidebar .card {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/* Section two-col stack on smaller screens */
+@media (max-width: 768px) {
+  .section.two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hero image height adjustment */
+@media (max-width: 500px) {
+  .hero img {
+    max-height: 220px;
+  }
+}
+
+/* Typography scaling */
+@media (max-width: 500px) {
+  h1.title {
+    font-size: 18px;
+  }
+  .section>h2 {
+    font-size: 16px;
+  }
+}
+
+
+
+.book-btn {
+  background-color: #ff9f1c; /* Button ka background */
+  color: #ffffff;             /* Text color white */
+  font: 600 16px "Poppins", sans-serif; /* Font style */
+  padding: 10px 15px;         /* Button padding */
+  border: none;               /* Border remove */
+  border-radius: 8px;         /* Rounded corners */
+  cursor: pointer;            /* Hover par pointer */
+  display: inline-block;      /* Button display */
+  text-align: center;
+  text-decoration: none;      /* Underline remove */
+}
+
+</style>
+</head>
+<body>
+<!-- Topbar -->
+<div class="topbar">
+<div class="wrap">
+<div class="left">
+<span><i class="fa-solid fa-phone"></i> (000) 999-898-999</span>
+<a href="mailto:support@exploreease.com"><i class="fa-solid fa-envelope"></i> support@exploreease.com</a>
+</div>
+<div class="right">
+<a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+</div>
+</div>
+</div>
+<!-- Navbar -->
+<!-- Navbar -->
+<nav>
+<div class="logo">Explore<span>Ease</span></div>
+<!-- Hamburger for mobile -->
+<div class="hamburger" id="hamburger">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<ul class="nav-links" id="nav-links">
+<li><a class="active" href="index.html">Home</a></li>
+<li><a href="index.html">About</a></li>
+<!-- Tour Dropdown -->
+<li class="has-dropdown">
+<a href="#">Tour</a>
+<ul class="dropdown">
+<li><a href="tour1.html">Tour Packages</a></li>
+<li><a href="tour2.html">Tour Details</a></li>
+<li><a href="tourbooking.html">Tour Booking</a></li>
+</ul>
+</li>
+<!-- Destination Dropdown -->
+<li class="has-dropdown">
+<a href="#">Destination</a>
+<ul class="dropdown">
+<li><a href="destination1.html">Destinations</a></li>
+<li><a href="destination2.html">Destination Details</a></li>
+<li><a href="destinationbooking.html"> Destination Booking</a></li>
+</ul>
+</li>
+<!-- Hotel Dropdown -->
+<li class="has-dropdown">
+<a href="#">Hotel</a>
+<ul class="dropdown">
+<li><a href="hotel.html">Hotel Packages</a></li>
+<li><a href="hotelbooking.html">Hotel Booking</a></li>
+</ul>
+</li>
+<!-- Car Dropdown -->
+<li class="has-dropdown">
+<a href="#">Car</a>
+<ul class="dropdown">
+<li><a href="car.html">Car Packages</a></li>
+<li><a href="carbooking.html">Car Booking</a></li>
+</ul>
+</li>
+<li><a href="#testimonial">Testimonials</a></li>
+<li><a href="#contact">Contact</a></li>
+<li>
+<a aria-label="Cart" class="cart-link" href="cart.html">
+<i aria-hidden="true" class="fa fa-shopping-cart"></i>
+<span class="cart-count" id="cart-count">0</span>
+</a>
+</li>
+<li>
+<a href="login.html" target="_blank">
+<button class="login-btn">Login / Signup</button>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Hero Section -->
+<section class="hero1">
+<div class="overlay1">
+<h1 style="font-size: 35px;">Tour Package Details</h1>
+</div>
+</section>
+<!-- Page Wrapper -->
+
+<!-- Top image & booking sidebar -->
+<div class="grid">
+<!-- Left/main column -->
+<main class="main">
+<figure class="hero">
+<img alt="Coastal village at sunset" src="https://w0.peakpx.com/wallpaper/611/827/HD-wallpaper-sultan-ahmed-mosque-blue-mosque-evening-sunset-istanbul-landmark-sultanahmet-istanbul-turkey.jpg"/>
+<figcaption class="media-tags">
+<button class="tag" onclick="window.open('https://www.youtube.com/watch?v=7CIVORlqt3Y', '_blank')"> Video ▶ </button>
+</figcaption>
+</figure>
+<!-- Location / title block -->
+<div class="meta-row small">
+<span class="pin">Turkey, Istanbul</span>
+<a class="map-link" href="https://www.google.com/search?gs_ssp=eJzj4tTP1TewtDSxzDVg9OLILC5JzEsqzQEAPMAGQA&amp;q=istanbul&amp;rlz=1C1CHBD_enPK1082PK1082&amp;oq=&amp;gs_lcrp=EgZjaHJvbWUqDAgAEC4YJxjqAhitBjIMCAAQLhgnGOoCGK0GMgwIARAjGCcY6gIYrQYyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyDwgFEC4YJxjHARjqAhjRAzIMCAYQIxgnGOoCGK0GMgkIBxAjGCcY6gIyFQgIEAAYQhiRAhi0AhjqAhiABBiKBTIVCAkQABhCGJECGLQCGOoCGIAEGIoFMhUIChAAGEIYkQIYtAIY6gIYgAQYigUyFQgLEAAYQhiRAhi0AhjqAhiABBiKBdIBCTE2MDBqMGoxNagCDLACAfEFXeB522qD1YbxBV3gedtqg9WG&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank">View on map</a>
+</div>
+<h1 class="title">Istanbul: A Journey Through Culture and Heritage &amp; Kimberly</h1>
+<!-- Quick facts bar -->
+<ul class="facts">
+<li><i class="fa-solid fa-dollar-sign"></i> <span class="label">From</span><span class="value">$104</span></li>
+<li><i class="fa-solid fa-clock"></i> <span class="label">Duration</span><span class="value">7 days</span></li>
+<li><i class="fa-solid fa-users"></i> <span class="label">Max People</span><span class="value">12+</span></li>
+<li><i class="fa-solid fa-child"></i> <span class="label">Min Age</span><span class="value">12+</span></li>
+<li><i class="fa-solid fa-umbrella-beach"></i> <span class="label">Tour Type</span><span class="value">Adventure</span></li>
+<li><i class="fa-solid fa-star"></i> <span class="label">Reviews</span><span class="value">4.8 <span class="muted">(5 reviews)</span></span></li>
+</ul>
+<!-- Overview -->
+<section class="section">
+<h2>Overview</h2>
+<p>Istanbul, the vibrant and historic city straddling the continents of Europe and Asia, offers an enchanting blend of cultures, sights, and experiences that captivate every traveler’s heart. As Turkey’s cultural and economic hub, Istanbul seamlessly fuses its rich heritage with modernity, creating an unforgettable journey for visitors.</p>
+<p>The city is home to some of the world’s most iconic landmarks, including the awe-inspiring Hagia Sophia, the majestic Blue Mosque, and the grand Topkapi Palace, each bearing witness to Istanbul’s illustrious past. Wandering through the bustling streets, you’ll find an array of delightful bazaars, where you can haggle for unique souvenirs, immerse yourself in the aromatic spices, and savor traditional Turkish delights.</p>
+</section>
+<!-- Included / Excluded -->
+<section class="section two-col">
+<div>
+<h3>Included / Exclude</h3>
+<ul class="ticks">
+<li class="ok">Pick and Drop Services</li>
+<li class="ok">3 Meal Per Day</li>
+<li class="ok">Cruise Dinner &amp; Music Event</li>
+<li class="ok">Visit 8 Best Places in the City With Group</li>
+</ul>
+</div>
+<div>
+<h3> </h3>
+<ul class="cross">
+<li class="no">Additional Services</li>
+<li class="no">Insurance</li>
+<li class="no">Food &amp; Drinks</li>
+<li class="no">Tickets</li>
+</ul>
+</div>
+</section>
+<!-- Tour Plan (Accordion) -->
+<section class="section">
+<h2>Istanbul 6-Day Tour Plan</h2>
+<div class="accordion">
+<!-- Day 1 -->
+<details class="item">
+<summary><span class="badge">Day 1:</span> Arrival &amp; Istanbul City Orientation</summary>
+<div class="item-body">
+<h4>Activities &amp; Sightseeing:</h4>
+<ul>
+<li>Arrival at Istanbul Airport, transfer to hotel</li>
+<li>Evening city orientation tour: Sultanahmet Square, Hippodrome</li>
+<li>Leisure time to relax or enjoy hotel facilities</li>
+</ul>
+<h4>Facilities Included:</h4>
+<ul>
+<li>Airport pick-up and drop</li>
+<li>Hotel check-in and welcome drinks</li>
+<li>English-speaking tour guide</li>
+</ul>
+<h4>Meals:</h4>
+<ul>
+<li>Welcome dinner at local Turkish restaurant (kebabs, mezes, dessert)</li>
+</ul>
+</div>
+</details>
+<!-- Day 2 -->
+<details class="item">
+<summary><span class="badge">Day 2:</span> Iconic Istanbul Landmarks</summary>
+<div class="item-body">
+<h4>Activities &amp; Sightseeing:</h4>
+<ul>
+<li>Visit Hagia Sophia and Blue Mosque</li>
+<li>Explore Topkapi Palace and Basilica Cistern</li>
+<li>Walk through Sultanahmet Square and take photos</li>
+</ul>
+<h4>Facilities Included:</h4>
+<ul>
+<li>Entrance tickets to monuments</li>
+<li>Guided historical tour</li>
+<li>Comfortable coach transportation</li>
+</ul>
+<h4>Meals:</h4>
+<ul>
+<li>Breakfast at hotel</li>
+<li>Lunch at local restaurant (Turkish specialties)</li>
+<li>Dinner at hotel or optional night tour meal</li>
+</ul>
+</div>
+</details>
+<!-- Day 3 -->
+<details class="item">
+<summary><span class="badge">Day 3:</span> Grand Bazaar &amp; Spice Market</summary>
+<div class="item-body">
+<h4>Activities &amp; Sightseeing:</h4>
+<ul>
+<li>Visit Grand Bazaar for shopping souvenirs, carpets, jewelry</li>
+<li>Explore Spice Bazaar and taste Turkish delights</li>
+<li>Optional Bosphorus ferry cruise in evening</li>
+</ul>
+<h4>Facilities Included:</h4>
+<ul>
+<li>Guided shopping tour</li>
+<li>Ferry tickets for Bosphorus cruise (if chosen)</li>
+</ul>
+<h4>Meals:</h4>
+<ul>
+<li>Breakfast at hotel</li>
+<li>Lunch in traditional Turkish cafe</li>
+<li>Dinner at hotel</li>
+</ul>
+</div>
+</details>
+<!-- Day 4 -->
+<details class="item">
+<summary><span class="badge">Day 4:</span> Asian Side &amp; Local Culture</summary>
+<div class="item-body">
+<h4>Activities &amp; Sightseeing:</h4>
+<ul>
+<li>Visit Kadikoy Market and Bagdat Street</li>
+<li>Explore Çamlıca Hill for panoramic city views</li>
+<li>Experience Turkish tea &amp; coffee at local cafes</li>
+</ul>
+<h4>Facilities Included:</h4>
+<ul>
+<li>Transportation to Asian side by ferry</li>
+<li>Local guide for markets &amp; cultural walk</li>
+</ul>
+<h4>Meals:</h4>
+<ul>
+<li>Breakfast at hotel</li>
+<li>Lunch at local restaurant</li>
+<li>Dinner at hotel</li>
+</ul>
+</div>
+</details>
+<!-- Day 5 -->
+<details class="item">
+<summary><span class="badge">Day 5:</span> Princes’ Islands Day Trip</summary>
+<div class="item-body">
+<h4>Activities &amp; Sightseeing:</h4>
+<ul>
+<li>Full-day trip to Princes’ Islands</li>
+<li>Explore Büyükada by horse carriage or bicycle</li>
+<li>Relax at the seaside and enjoy island vibes</li>
+</ul>
+<h4>Facilities Included:</h4>
+<ul>
+<li>Round-trip ferry tickets</li>
+<li>Guide for island tour</li>
+<li>Leisure time at beach/cafe</li>
+</ul>
+<h4>Meals:</h4>
+<ul>
+<li>Breakfast at hotel</li>
+<li>Picnic-style lunch or local restaurant</li>
+<li>Dinner at hotel</li>
+</ul>
+</div>
+</details>
+<!-- Day 6 -->
+<details class="item">
+<summary><span class="badge">Day 6:</span> Leisure &amp; Departure</summary>
+<div class="item-body">
+<h4>Activities &amp; Sightseeing:</h4>
+<ul>
+<li>Morning free for shopping or sightseeing</li>
+<li>Hotel check-out and transfer to airport</li>
+</ul>
+<h4>Facilities Included:</h4>
+<ul>
+<li>Airport drop-off</li>
+<li>Assistance with luggage and departure formalities</li>
+</ul>
+<h4>Meals:</h4>
+<ul>
+<li>Breakfast at hotel</li>
+</ul>
+</div>
+</details>
+</div>
+</section>
+<!-- Map -->
+<section class="section">
+<h2>Map</h2>
+<div class="map-wrap">
+<iframe frameborder="0" height="450" loading="lazy" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=28.921%2C41.005%2C29.021%2C41.055&amp;layer=mapnik&amp;marker=41.015%2C28.979" width="600">
+</iframe>
+<br/>
+<small>
+<a href="https://www.openstreetmap.org/?mlat=41.015&amp;mlon=28.979#map=14/41.015/28.979">
+    View Larger Map
+  </a>
+</small>
+</div>
+<br/>
+<div class="book">
+<a class="book-btn" href="tourbooking.html">Book Now</a></div>
+</section>
+<!-- Average Reviews -->
+<section class="section">
+<h2>Average Reviews</h2>
+<div class="reviews-grid">
+<div class="score-card">
+<div class="big">4.8</div>
+<div class="small">Excellent</div>
+</div>
+<div class="bars">
+<div class="bar">
+<span>Services</span><div class="track"><i style="width:90%"></i><b>4.0</b></div>
+</div>
+<div class="bar">
+<span>Locations</span><div class="track"><i style="width:65%"></i><b>2.8</b></div>
+</div>
+<div class="bar">
+<span>Amenities</span><div class="track"><i style="width:75%"></i><b>3.0</b></div>
+</div>
+<div class="bar">
+<span>Prices</span><div class="track"><i style="width:95%"></i><b>4.0</b></div>
+</div>
+<div class="bar">
+<span>Food</span><div class="track"><i style="width:80%"></i><b>3.5</b></div>
+</div>
+<div class="bar">
+<span> Room comfort and quality</span><div class="track"><i style="width:96%"></i><b>4.6</b></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Showing 1 review -->
+<section class="section">
+<h2>Showing 1 review</h2>
+<article class="review">
+  <img class="avatar" src="https://i.pravatar.cc/56?img=12" alt="avatar"/>
+  <div class="review-body">
+    <div class="review-top">
+      <div class="who">
+        <h4>Sindy Simmons</h4>
+        <span class="date">March 17, 2023</span>
+      </div>
+      <div class="stars">
+        <span class="active"><i class="fa fa-star"></i></span>
+        <span class="active"><i class="fa fa-star"></i></span>
+        <span class="active"><i class="fa fa-star"></i></span>
+        <span class="active"><i class="fa fa-star"></i></span>
+        <span class="active"><i class="fa fa-star"></i></span>
+      </div>
+    </div>
+    <p>
+      Everything was amazing, staff were very helpful and we felt very welcomed. 
+      Will definitely come back!
+    </p>
+  </div>
+</article>
+
+</section>
+
+
+  <!-- Reviews list -->
+  <section class="section">
+    <h2>User Reviews</h2>
+    <div id="reviews-list"></div>
+  </section>
+
+  <!-- Add a review -->
+  <section class="section">
+    <h2>Add a review</h2>
+    <form class="review-form">
+      <div class="rating-rows">
+        <label>Services <span class="stars"></span></label>
+        <label>Locations <span class="stars"></span></label>
+        <label>Amenities <span class="stars"></span></label>
+        <label>Prices <span class="stars"></span></label>
+        <label>Room comfort and quality <span class="stars"></span></label>
+      </div>
+      <div class="inputs">
+        <input type="text" placeholder="Your name" required/>
+        <input type="email" placeholder="Email address" required/>
+        <textarea placeholder="Write your comment" rows="5"></textarea>
+      </div>
+      <input type="file" id="review-image" accept="image/*" style="margin-bottom:10px"/>
+      <button class="btn">Submit Review</button>
+    </form>
+  </section>
+
+</main>
+<!-- Right/booking sidebar -->
+</div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-grid">
+<!-- Logo / About -->
+<div class="f-col fade-col">
+<div class="logo">Explore<span class="ease">Ease</span></div>
+<p style="margin-top:10px; font-size:14px; color:#aaa;">
+        Explore the world with us. Discover amazing tours, hotels, and destinations tailored just for you.
+      </p>
+<div class="social-icons">
+<a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="f-col fade-col">
+<h4><i class="fas fa-link"></i> Quick Links</h4>
+<ul>
+<li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+<li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+<li><a href="#"><i class="fas fa-map-marked-alt"></i> Travel Guide</a></li>
+<li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div class="f-col fade-col">
+<h4><i class="fas fa-cogs"></i> Services</h4>
+<ul>
+<li><a href="#"><i class="fas fa-suitcase-rolling"></i> Tour Packages</a></li>
+<li><a href="#"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+<li><a href="#"><i class="fas fa-passport"></i> Travel Insurance</a></li>
+<li><a href="#"><i class="fas fa-user-tie"></i> Travel Assistance</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div class="f-col fade-col">
+<h4><i class="fas fa-envelope"></i> Newsletter</h4>
+<p style="font-size:14px; color:#aaa;">Subscribe to get latest offers and updates.</p>
+<div class="newsletter">
+<input placeholder="Enter Your Email" type="email"/>
+<button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+</div>
+</div>
+</div>
+<div class="copy">
+<p>© 2025 ExploreEase. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- Minimal JS for plus/minus + total -->
+<script src="header-footer.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const starsGroups = document.querySelectorAll(".review-form .stars");
+  const categories = ["Services","Locations","Amenities","Prices","Room comfort and quality"];
+  let ratings = {Services:0,Locations:0,Amenities:0,Prices:0,"Room comfort and quality":0};
+  let reviews = [];
+
+  // Setup clickable FontAwesome stars
+  starsGroups.forEach((starsEl, index)=>{
+    for(let i=1;i<=5;i++){
+      let star=document.createElement("span");
+      star.innerHTML='<i class="fa fa-star"></i>';
+      star.dataset.value=i;
+      star.addEventListener("click", ()=>{
+        ratings[categories[index]] = i;
+        starsEl.querySelectorAll("span").forEach((s,j)=>{
+          if(j<i){s.classList.add("active");}
+          else{s.classList.remove("active");}
+        });
+      });
+      starsEl.appendChild(star);
+    }
+  });
+
+  // Submit review
+  document.querySelector(".review-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name=this.querySelector("input[type='text']").value;
+    const comment=this.querySelector("textarea").value;
+    const imgFile=document.getElementById("review-image").files[0];
+
+    let imgURL="https://i.pravatar.cc/56";
+    if(imgFile){ imgURL=URL.createObjectURL(imgFile); }
+
+    let avgRating = Object.values(ratings).reduce((a,b)=>a+b,0)/categories.length;
+    let today = new Date();
+    let dateStr = today.toLocaleDateString();
+
+    reviews.push({name,comment,ratings:{...ratings},imgURL,dateStr});
+
+    // Build star HTML
+    let starHTML="";
+    for(let i=1;i<=5;i++){
+      starHTML += `<span class="${i<=Math.round(avgRating)?'active':''}"><i class="fa fa-star"></i></span>`;
+    }
+
+    // Add review
+    let reviewHTML=`<article class="review">
+      <img class="avatar" src="${imgURL}" alt="avatar"/>
+      <div class="review-body">
+        <div class="review-top">
+          <div class="who"><h4>${name}</h4><span class="date">${dateStr}</span></div>
+          <div class="stars">${starHTML}</div>
+        </div>
+        <p>${comment}</p>
+      </div>
+    </article>`;
+    document.getElementById("reviews-list").insertAdjacentHTML("afterbegin", reviewHTML);
+
+    updateAverages();
+    this.reset();
+    starsGroups.forEach(starsEl=>starsEl.querySelectorAll("span").forEach(s=>s.classList.remove("active")));
+  });
+
+  function updateAverages(){
+    let totals={Services:0,Locations:0,Amenities:0,Prices:0,"Room comfort and quality":0};
+    reviews.forEach(r=>{ categories.forEach(c=>totals[c]+=r.ratings[c]); });
+    let count=reviews.length;
+    let overall=0;
+    categories.forEach(c=>{
+      let avg=totals[c]/count || 0;
+      overall+=avg;
+     // Update progress bars correctly
+let bars = document.querySelectorAll(".bars .bar");
+bars.forEach(bar=>{
+  let labelText = bar.querySelector("span").textContent.trim().toLowerCase();
+  if(labelText.includes(c.toLowerCase())) {
+    let iEl=bar.querySelector(".track i");
+    let bEl=bar.querySelector(".track b");
+    if(iEl){ iEl.style.width=(avg/5*100)+"%"; }
+    if(bEl){ bEl.textContent=avg.toFixed(1); }
+  }
+});
+
+    });
+    overall/=categories.length;
+    document.querySelector(".score-card .big").textContent=overall.toFixed(1);
+    document.querySelector(".score-card .small").textContent= overall>0 ? "Based on "+count+" review(s)" : "No Reviews";
+  }
+});
+</script>
+
+</body>
+</html>

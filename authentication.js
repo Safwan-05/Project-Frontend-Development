@@ -168,15 +168,109 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-// Cart icon click effect
+// Hero Section Script
 document.addEventListener("DOMContentLoaded", () => {
-  const cartIcon = document.querySelector(".cart-icon");
-  if (cartIcon) {
-    cartIcon.addEventListener("click", () => {
-      cartIcon.classList.add("clicked");
-      setTimeout(() => cartIcon.classList.remove("clicked"), 400);
-    });
+  const hero = document.querySelector(".hero");
+  const content = hero.querySelector(".content");
+
+  // Fade-in on Load
+  setTimeout(() => {
+    hero.classList.add("show");
+  }, 400);
+
+  // Responsive Adjustment
+  function resizeHero() {
+    if (window.innerWidth < 600) {
+      hero.style.height = "55vh";
+      content.style.padding = "0 14px";
+      content.style.textAlign = "center";
+    } else if (window.innerWidth < 900) {
+      hero.style.height = "65vh";
+      content.style.padding = "0 18px";
+      content.style.textAlign = "left";
+    } else {
+      hero.style.height = "70vh";
+      content.style.padding = "0 22px";
+    }
   }
+
+  window.addEventListener("resize", resizeHero);
+  resizeHero();
+
+  // Subtle Parallax Effect
+  window.addEventListener("scroll", () => {
+    const offset = window.scrollY * 0.05;
+    hero.style.backgroundPosition = `center ${50 + offset}%`;
+  });
 });
+
+
+//  ----------------- auth section
+
+/* toggle logic */
+const signupTab = document.getElementById("signupTab");
+const signinTab = document.getElementById("signinTab");
+const signupForm = document.getElementById("signupForm");
+const signinForm = document.getElementById("signinForm");
+
+signupTab.addEventListener("click", () => {
+  signupForm.style.display = "block";
+  signinForm.style.display = "none";
+  signupTab.classList.add("active");
+  signinTab.classList.remove("active");
+});
+
+signinTab.addEventListener("click", () => {
+  signinForm.style.display = "block";
+  signupForm.style.display = "none";
+  signinTab.classList.add("active");
+  signupTab.classList.remove("active");
+});
+
+/* validation helpers */
+function showError(id, message) {
+  const el = document.getElementById(id);
+  el.innerText = message;
+  el.style.display = message ? 'block' : 'none';
+}
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function validatePhone(phone) {
+  return /^[0-9]{7,15}$/.test(phone);
+}
+
+/* signup validation */
+function validateSignup() {
+  let valid = true;
+  const email = document.getElementById('signup-email').value.trim();
+  const phone = document.getElementById('signup-phone').value.trim();
+  const pass = document.getElementById('signup-pass').value.trim();
+  const confirm = document.getElementById('signup-confirm').value.trim();
+
+  showError('signup-email-error', !email ? "Email is required" : !validateEmail(email) ? "Invalid email format" : "");
+  showError('signup-phone-error', !phone ? "Phone is required" : !validatePhone(phone) ? "Invalid phone number" : "");
+  showError('signup-pass-error', !pass ? "Password is required" : pass.length < 6 ? "Password must be at least 6 characters" : "");
+  showError('signup-confirm-error', confirm !== pass ? "Passwords do not match" : "");
+
+  document.querySelectorAll('#signup .error-msg').forEach(err => { if (err.innerText) valid = false; });
+  if (valid) {
+    alert("Sign Up successful! Switching to Sign In...");
+    signinTab.click();
+  }
+}
+
+/* signin validation */
+function validateSignin() {
+  let valid = true;
+  const email = document.getElementById('signin-email').value.trim();
+  const pass = document.getElementById('signin-pass').value.trim();
+
+  showError('signin-email-error', !email ? "Email is required" : !validateEmail(email) ? "Invalid email format" : "");
+  showError('signin-pass-error', !pass ? "Password is required" : pass.length < 6 ? "Password must be at least 6 characters" : "");
+
+  document.querySelectorAll('#signin .error-msg').forEach(err => { if (err.innerText) valid = false; });
+  if (valid) {
+    alert("Sign In successful!");
+  }
+}

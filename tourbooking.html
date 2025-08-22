@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ExploreEase-Tour Booking Form</title>
+  <link rel="stylesheet" href="header-footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#FF9F1C;--bg:#ffffff;--muted:#7a7a7a;--radius:14px}
+    *{box-sizing:border-box}
+    body {
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f9;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column; /* navbar upar, form center, footer neeche */
+}
+
+/* Navbar hamesha top pe */
+nav {
+  flex-shrink:0;
+}
+.hero {
+    background: url('https://wallup.net/wp-content/uploads/2019/09/4972-beautiful-nature.jpg') center/cover no-repeat;
+    position: relative;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 100px;
+    color: #fff;
+}
+/* Form area center me rahe */
+main {
+  flex:1; /* poora available space le */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+
+/* Footer bottom me chipka rahe */
+footer {
+  flex-shrink:0;
+}
+
+    body{font-family:'Poppins',sans-serif;background:#f4f6f9;margin:0;min-height:100vh}
+    .card{width:100%;max-width:1000px;background:var(--bg);border-radius:var(--radius);box-shadow:0 12px 30px rgba(15,20,30,0.08);display:grid;grid-template-columns:1fr 380px;gap:22px;padding:26px}
+    .left{padding:4px 6px}
+    h1{margin:0 0 6px;font-size:22px}
+    .lead{color:var(--muted);margin:0 0 16px}
+    label{display:block;margin:10px 0 6px;color:#111;font-size:13px}
+    input[type="text"],input[type="date"],input[type="time"],input[type="number"]{width:100%;padding:12px;border:1px solid #e9e9e9;border-radius:10px;font-size:15px;background:#fff}
+    .row{display:flex;gap:12px}
+    .row .col{flex:1}
+    .summary{background:linear-gradient(180deg,#fff,#fff);padding:18px;border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.7);align-self:start}
+    .summary h2{margin:0 0 10px;font-size:18px}
+    .meta{font-size:14px;color:var(--muted);margin-top:8px}
+    .total{font-size:20px;font-weight:700;color:var(--accent);margin-top:12px}
+    .btn{display:inline-block;margin-top:14px;background:var(--accent);color:#fff;padding:11px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .btn[disabled]{opacity:.55;cursor:not-allowed}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    .error{color:#d93025;font-size:13px;margin-top:8px;display:none}
+    @media (max-width:920px){.card{grid-template-columns:1fr;}.summary{order:2}}
+  </style>
+</head>
+<body>
+
+    
+    <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="left">
+        <span><i class="fa-solid fa-phone"></i> (000) 999-898-999</span>
+        <a href="mailto:support@exploreease.com"><i class="fa-solid fa-envelope"></i> support@exploreease.com</a>
+      </div>
+      <div class="right">
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Explore<span>Ease</span></div>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">About</a></li>
+
+      <!-- Tour Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Tour</a>
+        <ul class="dropdown">
+          <li><a href="tour1.html">Tour Packages</a></li>
+          <li><a href="tour2.html">Tour Details</a></li>
+            <li><a href="tourbooking.html">Tour Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Destination Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Destination</a>
+        <ul class="dropdown">
+            <li><a href="destination1.html">Destinations</a></li>
+          <li><a href="destination2.html">Destination Details</a></li>
+          <li><a href="destinationbooking.html"> Destination Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Hotel Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Hotel</a>
+        <ul class="dropdown">
+          <li><a href="hotel.html">Hotel Packages</a></li>
+          <li><a href="hotelbooking.html">Hotel Booking</a></li>
+        </ul>
+      </li>
+
+    
+      <!-- Car Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Car</a>
+        <ul class="dropdown">
+          <li><a href="car.html">Car Packages</a></li>
+          <li><a href="carbooking.html">Car Booking</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="#testimonial">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+    
+      <li>
+        <a href="cart.html" class="cart-link" aria-label="Cart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </li>
+
+        <li>
+        <a href="login.html" target="_blank">
+          <button class="login-btn">Login / Signup</button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="overlay">
+    <h1 style ="font-size: 35px;">Tour Booking</h1>
+  </div>
+</section>
+
+
+<main>
+
+
+
+  <div class="card" role="region" aria-label="Tour booking form">
+    <div class="left">
+      <h1>Tour Booking</h1>
+      <p class="lead">Enter tour name, date/time and number of travellers.</p>
+
+      <div style="background:#fff4e6;padding:10px;border-radius:8px;margin-bottom:12px;font-size:14px">
+        💰 <strong>Pricing:</strong> Adults = <strong>$120</strong> each, Children = <strong>$60</strong> each
+      </div>
+
+      <label for="tourName">Tour name</label>
+      <input id="tourName" type="text" placeholder="e.g. Thailand Adventure" required>
+
+      <div class="row" style="margin-top:6px">
+        <div class="col">
+          <label for="tourDate">Date</label>
+          <input id="tourDate" type="date" required>
+        </div>
+        <div class="col">
+          <label for="tourTime">Time</label>
+          <input id="tourTime" type="time" required>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:6px">
+        <div class="col">
+          <label for="tourAdults">Adults</label>
+          <input id="tourAdults" type="number" min="0" value="0" required>
+        </div>
+        <div class="col">
+          <label for="tourChildren">Children</label>
+          <input id="tourChildren" type="number" min="0" value="0">
+        </div>
+      </div>
+
+      <div id="tourError" class="error" aria-live="polite"></div>
+
+      <button id="bookTour" class="btn" disabled>Place booking</button> <button id="addTourToCart" class="btn add-to-cart" type="button">Add to Cart</button>
+      <p class="note">Total updates automatically when you change counts.</p>
+    </div>
+
+    <aside class="summary" aria-live="polite">
+      <h2>Booking summary</h2>
+      <div class="meta"><strong>Tour:</strong> <span id="tourNameSummary">—</span></div>
+      <div class="meta"><strong>Date & time:</strong> <span id="tourDateTimeSummary">—</span></div>
+      <div class="meta"><strong>Adults:</strong> <span id="tourAdultsSummary">—</span></div>
+      <div class="meta"><strong>Children:</strong> <span id="tourChildrenSummary">—</span></div>
+      <div class="meta"><strong>Price / adult:</strong> $120</div>
+      <div class="meta"><strong>Price / child:</strong> $60</div>
+      <div class="total">Total: <span id="tourTotal">—</span></div>
+
+      <div style="margin-top:12px">
+        <h3 style="margin:0 0 6px;font-size:15px">Confirmation</h3>
+        <div id="confirmedTour" style="font-size:13px;color:var(--muted)">No booking yet.</div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- Footer -->
+  <footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Logo / About -->
+    <div class="f-col fade-col">
+      <div class="logo">Explore<span class="ease">Ease</span></div>
+      <p style="margin-top:10px; font-size:14px; color:#aaa;">
+        Explore the world with us. Discover amazing tours, hotels, and destinations tailored just for you.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+   <!-- Quick Links -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-link"></i> Quick Links</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Travel Guide</a></li>
+    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+  </ul>
+</div>
+
+<!-- Services -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-cogs"></i> Services</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Tour Packages</a></li>
+    <li><a href="#"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+    <li><a href="#"><i class="fas fa-passport"></i> Travel Insurance</a></li>
+    <li><a href="#"><i class="fas fa-user-tie"></i> Travel Assistance</a></li>
+  </ul>
+</div>
+
+
+    <!-- Newsletter -->
+    <div class="f-col fade-col">
+      <h4><i class="fas fa-envelope"></i> Newsletter</h4>
+      <p style="font-size:14px; color:#aaa;">Subscribe to get latest offers and updates.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter Your Email">
+        <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <p>&copy; 2025 ExploreEase. All Rights Reserved.</p>
+  </div>
+</footer>
+ 
+
+
+
+
+<script>
+(function(){
+  const tourName = document.getElementById('tourName');
+  const tourDate = document.getElementById('tourDate');
+  const tourTime = document.getElementById('tourTime');
+  const tourAdults = document.getElementById('tourAdults');
+  const tourChildren = document.getElementById('tourChildren');
+
+  const tourNameSummary = document.getElementById('tourNameSummary');
+  const tourDateTimeSummary = document.getElementById('tourDateTimeSummary');
+  const tourAdultsSummary = document.getElementById('tourAdultsSummary');
+  const tourChildrenSummary = document.getElementById('tourChildrenSummary');
+  const tourTotal = document.getElementById('tourTotal');
+  const bookTour = document.getElementById('bookTour');
+  const tourError = document.getElementById('tourError');
+  const confirmedTour = document.getElementById('confirmedTour');
+
+  const ADULT_PRICE = 120;
+  const CHILD_PRICE = 60;
+
+  // Disable past dates
+  const today = new Date().toISOString().split("T")[0];
+  tourDate.setAttribute("min", today);
+
+  const currency = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
+  function fmt(v){ return currency.format(v); }
+
+  function validateForm(){
+    tourError.style.display = 'none';
+    if(!tourName.value.trim()){ tourError.textContent = 'Please enter tour name.'; tourError.style.display='block'; return false; }
+    if(!tourDate.value){ tourError.textContent = 'Please choose a date.'; tourError.style.display='block'; return false; }
+    if(!tourTime.value){ tourError.textContent = 'Please choose a time.'; tourError.style.display='block'; return false; }
+    if((parseInt(tourAdults.value)||0) < 0){ tourError.textContent = 'Adults cannot be negative.'; tourError.style.display='block'; return false; }
+    if((parseInt(tourChildren.value)||0) < 0){ tourError.textContent = 'Children cannot be negative.'; tourError.style.display='block'; return false; }
+    return true;
+  }
+
+  function updateSummary(){
+    const a = Math.max(0, parseInt(tourAdults.value) || 0);
+    const c = Math.max(0, parseInt(tourChildren.value) || 0);
+
+    tourNameSummary.textContent = tourName.value.trim() || '—';
+    tourDateTimeSummary.textContent = (tourDate.value ? tourDate.value : '—') + (tourTime.value ? ' • ' + tourTime.value : '');
+    tourAdultsSummary.textContent = a;
+    tourChildrenSummary.textContent = c;
+
+    const total = (a * ADULT_PRICE) + (c * CHILD_PRICE);
+    tourTotal.textContent = fmt(total);
+
+    bookTour.disabled = !validateForm();
+  }
+
+  [tourName, tourDate, tourTime, tourAdults, tourChildren].forEach(el => el.addEventListener('input', updateSummary));
+  updateSummary();
+
+  bookTour.addEventListener('click', function(){
+    if(!validateForm()) return;
+    const a = Math.max(0, parseInt(tourAdults.value) || 0);
+    const c = Math.max(0, parseInt(tourChildren.value) || 0);
+    const total = (a * ADULT_PRICE) + (c * CHILD_PRICE);
+    confirmedTour.innerHTML = '<strong>' + escapeHtml(tourName.value) + '</strong><br>' +
+      escapeHtml(tourDate.value) + ' • ' + escapeHtml(tourTime.value) + '<br>' +
+      a + ' adult(s) • ' + c + ' child(ren)<br>' +
+      '$120 per adult • $60 per child<br>' +
+      '<strong>Total: ' + fmt(total) + '</strong>';
+    bookTour.disabled = true;
+    bookTour.textContent = 'Booked ✓';
+  });
+
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];}); }
+})();
+</script>
+ <script src="header-footer.js"></script>
+<script src="cart.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var addBtn = document.getElementById('addTourToCart');
+  if (!addBtn) return;
+  function getText(id) { var el = document.getElementById(id); return el ? el.textContent || el.value || '' : ''; }
+  function numFromText(t) { var m = String(t).replace(/[^0-9.]/g,''); return parseFloat(m||'0'); }
+  addBtn.addEventListener('click', function() {
+    var subtotal = 0;
+    var totalTxt = getText('tourTotal');
+    subtotal = totalTxt ? numFromText(totalTxt) : 0;
+    var title = getText('tourName') || 'Tour Booking';
+    var summaryParts = [getText('tourDateTimeSummary'), getText('tourAdultsSummary'), getText('tourChildrenSummary')].filter(Boolean);
+    var item = {
+      type: 'Tour',
+      title: title,
+      summary: summaryParts.join(' • '),
+      qty: 1,
+      subtotal: subtotal
+    };
+    if (window.CartAPI) { CartAPI.addItem(item); }
+  });
+});
+</script>
+
+</body>
+</html>

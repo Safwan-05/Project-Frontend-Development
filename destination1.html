@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExploreEase-Destination</title>
+  <link rel="icon" type="image/x-icon" href="fevicon(2).png">
+  <link rel="stylesheet" href="destination1.css">
+
+  <!-- Fonts & Icons -->
+   <!-- Load Font Awesome -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="left">
+        <span><i class="fa-solid fa-phone"></i> (000) 999-898-999</span>
+        <a href="mailto:support@exploreease.com"><i class="fa-solid fa-envelope"></i> support@exploreease.com</a>
+      </div>
+      <div class="right">
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+    <!-- Navbar -->
+  <nav>
+    <div class="logo">Explore<span>Ease</span></div>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active" style="color: white;">Home</a></li>
+      <li><a href="index.html">About</a></li>
+
+      <!-- Tour Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Tour</a>
+        <ul class="dropdown">
+          <li><a href="tour1.html">Tour Packages</a></li>
+          <li><a href="tour2.html">Tour Details</a></li>
+            <li><a href="tourbooking.html">Tour Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Destination Dropdown -->
+      <li class="has-dropdown">
+        <a href="destination1.html" style="color: #ff9f1c;">Destination</a>
+        <ul class="dropdown">
+            <li><a href="destination1.html">Destinations</a></li>
+          <li><a href="destination2.html">Destination Details</a></li>
+          <li><a href="destinationbooking.html"> Destination Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Hotel Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Hotel</a>
+        <ul class="dropdown">
+          <li><a href="hotel.html">Hotel Packages</a></li>
+          <li><a href="hotelbooking.html">Hotel Booking</a></li>
+        </ul>
+      </li>
+
+    
+      <!-- Car Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Car</a>
+        <ul class="dropdown">
+          <li><a href="car.html">Car Packages</a></li>
+          <li><a href="carbooking.html">Car Booking</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="#testimonial">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+    
+      <li>
+        <a href="cart.html" class="cart-link" aria-label="Cart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </li>
+
+        <li>
+        <a href="login.html" target="_blank">
+          <button class="login-btn">Login / Signup</button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="content">
+      <div class="crumb">
+        <i class="fa-solid fa-house"></i> Home 
+        <i class="fa-solid fa-angles-right"></i> Destination
+      </div>
+      <h1> Explore Top Destinations</h1>
+      <div class="sub">
+        <i class="fa-solid fa-location-dot"></i> Discover amazing places across the globe with ExploreEase.
+      </div>
+      <div class="cta-row">
+        <a class="chip primary" href="#"><i class="fa-solid fa-map-location-dot"></i> View Packages</a>
+        <a class="chip" href="#"><i class="fa-solid fa-plane-departure"></i> Start Journey</a>
+      </div>
+    </div>
+  </section>
+  
+          <!-- Floating search card -->
+            <form class="search-card" id="searchForm" onsubmit="event.preventDefault(); doSearch();">
+                <div class="field destination">
+                    <label class="field-label">Destination</label>
+                    <input class="field-input" id="destination" type="text" placeholder="Where to go?"
+                        autocomplete="off" />
+                </div>
+
+                <div class="field type">
+                    <label class="field-label">Type</label>
+                    <input class="field-input" id="type" type="text" placeholder="Activity (e.g., city tour)" />
+                </div>
+
+                <div class="field when">
+                    <label class="field-label">When</label>
+                    <input class="field-input" id="date" type="date" />
+                </div>
+
+                <div class="field guests">
+                    <label class="field-label">Guests</label>
+                    <div class="guest-control" style="align-items:center;">
+                        <button type="button" class="guest-btn" id="guestDec" aria-label="decrease">−</button>
+                        <div class="guest-num" id="guestCount">1</div>
+                        <button type="button" class="guest-btn" id="guestInc" aria-label="increase">+</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="search-btn" type="submit">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="opacity:.95">
+                            <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="11" cy="11" r="6" stroke="white" stroke-width="2" />
+                        </svg>
+                        Search
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!--  TOP Destinations -->
+
+<section class="top-destinations">
+  <div class="td-header">
+    <p class="td-subtitle">Destination</p>
+    <h2 class="td-title">Top Destinations</h2>
+  </div>
+
+  <div class="td-scroll-container">
+    <button class="td-btn prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="td-scroll-wrapper">
+      <div class="td-carousel" id="tdScroll">
+    
+      <!-- 16 sample cards -->
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/860119662/photo/london-tower-bridge-river-thames-city-skyscrapers-illuminated-sunset-panorama.webp?a=1&b=1&s=612x612&w=0&k=20&c=k29gLalHA6TyO9zC67bSzeMnzy5ny4aJ0K4aZ0oZZvI=" alt="United Kingdom">
+        <h3>United Kingdom</h3>
+        <p>✈ 174,688 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/916257120/photo/hot-air-balloons-flying-over-cappadocia-turkey.webp?a=1&b=1&s=612x612&w=0&k=20&c=iuoqIQAzrsz2XZ_NFrXL-q4y7rxYo32cJ6YO8xLmFL8=" alt="Turkey">
+        <h3>Turkey</h3>
+        <p>✈ 174,688 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/1306075341/photo/bangkok-city-thailand.webp?a=1&b=1&s=612x612&w=0&k=20&c=k0RVNiGb-HyrMG6RXvSQkr1c5AYkbQz-Hew8VwAwzAU=" alt="Thailand">
+        <h3>Thailand</h3>
+        <p>✈ 174,688 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://plus.unsplash.com/premium_photo-1694475720977-fa8deca3fa91?w=500&auto=format&fit=crop&q=60" alt="France">
+        <h3>France</h3>
+        <p>✈ 174,688 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://images.unsplash.com/photo-1707985770057-4a56edd69666?w=500&auto=format&fit=crop&q=60" alt="Italy">
+        <h3>Italy</h3>
+        <p>✈ 160,200 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/491924730/photo/busy-shibuya-crossing-in-tokyo.webp?a=1&b=1&s=612x612&w=0&k=20&c=gvnndRyzuUWQXvGeAa4UWZhnDRVhKf-p5y4ucyV8d0Y=" alt="Japan">
+        <h3>Japan</h3>
+        <p>✈ 120,540 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://images.unsplash.com/photo-1720910538909-0cb4ab788562?w=500&auto=format&fit=crop&q=60" alt="Spain">
+        <h3>Spain</h3>
+        <p>✈ 185,320 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://images.unsplash.com/photo-1744123144347-a98e850c905b?w=500&auto=format&fit=crop&q=60" alt="Australia">
+        <h3>Australia</h3>
+        <p>✈ 145,800 Travelers</p>
+      </div>
+      <!-- Next 8 cards -->
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://images.unsplash.com/photo-1572349618549-f410e9cc78df?w=500&auto=format&fit=crop&q=60" alt="Canada">
+        <h3>Canada</h3>
+        <p>✈ 175,600 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/473449956/photo/great-wall-the-landmark-of-china-and-beijing.webp?a=1&b=1&s=612x612&w=0&k=20&c=_E4O8wuP3yNmNMVxDLDA5N7HTqtDA3kCdSNqmcy5IAg=" alt="China">
+        <h3>China</h3>
+        <p>✈ 150,200 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/878377556/photo/sao-paulo.webp?a=1&b=1&s=612x612&w=0&k=20&c=1xC5KdbUSjYugK6G1vPAdEZYtXAgqN7qaMp7lVddoPM=" alt="Brazil">
+        <h3>Brazil</h3>
+        <p>✈ 155,400 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/2194070027/photo/the-great-pyramid-with-camel-in-giza-egypt.webp?a=1&b=1&s=612x612&w=0&k=20&c=q2Oj1zkEAuqp_EZdr-2Iecbn92JWa_XV7l_hzJWGOTE=" alt="Egypt">
+        <h3>Egypt</h3>
+        <p>✈ 190,500 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/539002142/photo/mexico-citys-downtown-at-twilight.webp?a=1&b=1&s=612x612&w=0&k=20&c=yMinpFoDrrj9_-lfIur0vI_qwpaiTQugAIxiFtHEJTw=" alt="Mexico">
+        <h3>Mexico</h3>
+        <p>✈ 165,800 Travelers</p>
+      </div>
+      <div class="td-card"  onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/183371461/photo/city-lights-in-dubai-at-sunset.webp?a=1&b=1&s=612x612&w=0&k=20&c=w1Ctywo-WPcV3ronyQDVCbwq5Hb2J1DI4QwSHsnnZwQ=" alt="Dubai">
+        <h3>Dubai</h3>
+        <p>✈ 180,200 Travelers</p>
+      </div>
+      <div class="td-card" onclick="window.location.href='destination2.html'">
+        <img src="https://media.istockphoto.com/id/898687414/photo/scenic-view-of-train-on-viaduct-in-switzerland.webp?a=1&b=1&s=612x612&w=0&k=20&c=3Nf4i7z2P4CzVvMX_KBg9lU3L0wmNOiXNrUo5Qjmg2s=" alt="Switzerland">
+        <h3>Switzerland</h3>
+        <p>✈ 174,000 Travelers</p>
+      </div>
+    
+    </div>
+  </div>
+   <button class="td-btn next"><i class="fas fa-chevron-right"></i></button>
+   </div>
+   
+</section>
+
+
+
+<!-- footer -->
+
+<footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Logo / About -->
+    <div class="f-col fade-col">
+      <div class="logo">Explore<span class="ease">Ease</span></div>
+      <p style="margin-top:10px; font-size:14px; color:#aaa;">
+        Explore the world with us. Discover amazing tours, hotels, and destinations tailored just for you.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+   <!-- Quick Links -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-link"></i> Quick Links</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Travel Guide</a></li>
+    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+  </ul>
+</div>
+
+<!-- Services -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-cogs"></i> Services</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Tour Packages</a></li>
+    <li><a href="#"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+    <li><a href="#"><i class="fas fa-passport"></i> Travel Insurance</a></li>
+    <li><a href="#"><i class="fas fa-user-tie"></i> Travel Assistance</a></li>
+  </ul>
+</div>
+
+
+    <!-- Newsletter -->
+    <div class="f-col fade-col">
+      <h4><i class="fas fa-envelope"></i> Newsletter</h4>
+      <p style="font-size:14px; color:#aaa;">Subscribe to get latest offers and updates.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter Your Email">
+        <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <p>&copy; 2025 TravelGo. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+  
+  <script src="destination1.js"></script>
+</body>
+</html>

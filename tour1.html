@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreEase-Tour Packages</title>
+    <link rel="stylesheet" href="tour1.css">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="header-footer.css">
+</head>
+<body>
+
+  
+    <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="left">
+        <span><i class="fa-solid fa-phone"></i> (000) 999-898-999</span>
+        <a href="mailto:support@exploreease.com"><i class="fa-solid fa-envelope"></i> support@exploreease.com</a>
+      </div>
+      <div class="right">
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+ <!-- Navbar -->
+  <nav>
+    <div class="logo">Explore<span>Ease</span></div>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">About</a></li>
+
+      <!-- Tour Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Tour</a>
+        <ul class="dropdown">
+          <li><a href="tour1.html">Tour Packages</a></li>
+          <li><a href="tour2.html">Tour Details</a></li>
+            <li><a href="tourbooking.html">Tour Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Destination Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Destination</a>
+        <ul class="dropdown">
+            <li><a href="destination1.html">Destinations</a></li>
+          <li><a href="destination2.html">Destination Details</a></li>
+          <li><a href="destinationbooking.html"> Destination Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Hotel Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Hotel</a>
+        <ul class="dropdown">
+          <li><a href="hotel.html">Hotel Packages</a></li>
+          <li><a href="hotelbooking.html">Hotel Booking</a></li>
+        </ul>
+      </li>
+
+    
+      <!-- Car Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Car</a>
+        <ul class="dropdown">
+          <li><a href="car.html">Car Packages</a></li>
+          <li><a href="carbooking.html">Car Booking</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="#testimonial">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+    
+      <li>
+        <a href="cart.html" class="cart-link" aria-label="Cart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </li>
+
+        <li>
+        <a href="login.html" target="_blank">
+          <button class="login-btn">Login / Signup</button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay">
+            <h1>Tour Packages</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Where to go?">
+            <input type="text" placeholder="Activity">
+            <input type="date" value="2025-08-14">
+            <input type="number" placeholder="no of guest">
+            <button>Search</button>
+        </div>
+    </section>
+<br>
+    <main class="container">
+        <!-- Tour Cards -->
+         <div class="grid">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="https://marrakech-desert-travel.com/wp-content/uploads/2024/03/Private-Desert-Trips-From-Marrakech.jpg" alt="Tour 1">
+      <div class="card-body">
+        <div class="location-row">
+          <div>Morocco </div>
+          <div>7 days</div>
+        </div>
+        <div class="title">Sahara Desert & Marrakech Wonders</div>
+        <div class="info">
+          <div><span class="rating">★ 4.8</span> (15 reviews)</div>
+          <div class="price">From $520</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="https://w0.peakpx.com/wallpaper/611/827/HD-wallpaper-sultan-ahmed-mosque-blue-mosque-evening-sunset-istanbul-landmark-sultanahmet-istanbul-turkey.jpg" alt="Tour 2">
+      <div class="card-body">
+        <div class="location-row">
+          <div>Turkey </div>
+          <div>6 days</div>
+        </div>
+        <div class="title">Istanbul & Cappadocia Journey of culture & heritage</div>
+        <div class="info">
+          <div><span class="rating">★ 4.8</span> (15 reviews)</div>
+          <div class="price">From $680</div>
+        </div>
+        <a href="tour2.html" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="https://www.argentina-travels.com/wp-content/uploads/parcs-nationaux-argentins-adobestock-91449318-1280x800.jpeg" alt="Tour 3">
+      <div class="card-body">
+        <div class="location-row">
+          <div> Argentina</div>
+          <div>8 days</div>
+        </div>
+        <div class="title">Patagonia & Iguazu Falls Exploration</div>
+        <div class="info">
+          <div><span class="rating">★ 4.9</span> (30 reviews)</div>
+          <div class="price">From $750</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <img src="https://www.theinvisibletourist.com/wp-content/uploads/2025/02/featured_300_tokyo-itinerary-theinvisibletourist.jpg" alt="Tour 4">
+      <div class="card-body">
+        <div class="location-row">
+          <div>Japan </div>
+          <div>6 days</div>
+        </div>
+        <div class="title">Explore Japan: Tokyo, Kyoto & Osaka Tour</div>
+        <div class="info">
+          <div><span class="rating">★ 4.8</span> (22 reviews)</div>
+          <div class="price">From $700</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <img src="https://cdn.luxurytravelmag.com.au/wp-content/uploads/2024/07/24122332/shutterstock_114479500-scaled.jpg" alt="Tour 5">
+      <div class="card-body">
+        <div class="location-row">
+          <div>France</div>
+          <div>6 days</div>
+        </div>
+        <div class="title"> Paris, Louvre & French Riviera Escape</div>
+        <div class="info">
+          <div><span class="rating">★ 4.6</span> (18 reviews)</div>
+          <div class="price">From $600</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <img src="https://media.timeout.com/images/105240236/750/562/image.jpg" alt="Tour 6">
+      <div class="card-body">
+        <div class="location-row">
+          <div>Thailand Adventure</div>
+          <div>9 days</div>
+        </div>
+        <div class="title">Unforgettable Journey Through Bangkok & Phuket Islands</div>
+        <div class="info">
+          <div><span class="rating">★ 4.7</span> (25 reviews)</div>
+          <div class="price">From $720</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card">
+      <img src="https://humbo.s3.eu-north-1.amazonaws.com/place-photo/609fe709b9f0a2a29017dd7e/3WJoiuE5nv.jpeg" alt="Tour 7">
+      <div class="card-body">
+        <div class="location-row">
+          <div>Canada</div>
+          <div>7 days</div>
+        </div>
+        <div class="title">Rocky Mountains & Banff National Park</div>
+        <div class="info">
+          <div><span class="rating">★ 4.8</span> (19 reviews)</div>
+          <div class="price">From $690</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="card">
+      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/b3/f1/9c.jpg" alt="Tour 8">
+      <div class="card-body">
+        <div class="location-row">
+          <div>Colombia</div>
+          <div>8 days</div>
+        </div>
+        <div class="title">Cartagena & Coffee Triangle Experience</div>
+        <div class="info">
+          <div><span class="rating">★ 4.9</span> (28 reviews)</div>
+          <div class="price">From $850</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="card">
+      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/f6/e2/88.jpg" alt="Tour 9">
+      <div class="card-body">
+        <div class="location-row">
+          <div>Dubai </div>
+          <div>5 days</div>
+        </div>
+        <div class="title">Dubai: The City of Wonders & Desert Adventure</div>
+        <div class="info">
+          <div><span class="rating">★ 4.7</span> (21 reviews)</div>
+          <div class="price">From $550</div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+
+<!-- latest news -->
+      <section class="latest-guide">
+          <h2 class="section-title">Updates</h2>
+        <h2 class="subheading">Latest Travel Guide</h2>
+    </div>
+    <br>
+    <div class="guide-grid">
+        <div class="guide-card">
+            <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?cs=srgb&dl=pexels-jaime-reimer-1376930-2662116.jpg&fm=jpg" alt="Guide 1">
+            <h3>The Impact of Covid-19 on travel & tourism industry</h3>
+            <span>July 17, 2025 - Admin</span>
+        </div>
+        <div class="guide-card">
+            <img src="https://w0.peakpx.com/wallpaper/21/244/HD-wallpaper-gorgeous-travel-destination-rocks-house-cottage-travel-clouds-lake-mountain-flowers-nature.jpg" alt="Guide 2">
+            <h3>Exploring the hidden gems of Thailand</h3>
+            <span>July 16, 2025 - Admin</span>
+        </div>
+        <div class="guide-card">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/019/558/430/small/impressive-evening-view-of-santorini-island-picturesque-spring-sunset-on-the-famous-greek-resort-fira-greece-europe-traveling-concept-background-artistic-style-post-processed-photo.jpg" alt="Guide 3">
+            <h3>Top 10 must-visit destinations for 2025</h3>
+            <span>July 15, 2025 - Admin</span>
+        </div>
+        <div class="guide-card">
+            <img src="https://e0.pxfuel.com/wallpapers/629/552/desktop-wallpaper-beautiful-places-destination.jpg" alt="Guide 4">
+            <h3>How to travel on a budget without missing out</h3>
+            <span>July 14, 2025 - Admin</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+  <footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Logo / About -->
+    <div class="f-col fade-col">
+      <div class="logo">Explore<span class="ease">Ease</span></div>
+      <p style="margin-top:10px; font-size:14px; color:#aaa;">
+        Explore the world with us. Discover amazing tours, hotels, and destinations tailored just for you.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+   <!-- Quick Links -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-link"></i> Quick Links</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Travel Guide</a></li>
+    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+  </ul>
+</div>
+
+<!-- Services -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-cogs"></i> Services</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Tour Packages</a></li>
+    <li><a href="#"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+    <li><a href="#"><i class="fas fa-passport"></i> Travel Insurance</a></li>
+    <li><a href="#"><i class="fas fa-user-tie"></i> Travel Assistance</a></li>
+  </ul>
+</div>
+
+
+    <!-- Newsletter -->
+    <div class="f-col fade-col">
+      <h4><i class="fas fa-envelope"></i> Newsletter</h4>
+      <p style="font-size:14px; color:#aaa;">Subscribe to get latest offers and updates.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter Your Email">
+        <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <p>&copy; 2025 ExploreEase. All Rights Reserved.</p>
+  </div>
+</footer>
+  <script src="header-footer.js"></script>
+
+</body>
+</html>

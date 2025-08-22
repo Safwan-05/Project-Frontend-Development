@@ -1,11 +1,414 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=hotel1.html">
-  <title>Redirecting...</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ExploreEase</title>
+  <!-- Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/><link rel="stylesheet" href="styles2.css">
+   <link rel="stylesheet" href="header-footer.css">
 </head>
 <body>
-  
+
+
+    <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="left">
+        <span><i class="fa-solid fa-phone"></i> (000) 999-898-999</span>
+        <a href="mailto:support@exploreease.com"><i class="fa-solid fa-envelope"></i> support@exploreease.com</a>
+      </div>
+      <div class="right">
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+ <!-- Navbar -->
+  <nav>
+    <div class="logo">Explore<span>Ease</span></div>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+
+      <!-- Tour Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Tour</a>
+        <ul class="dropdown">
+          <li><a href="tour1.html">Tour Packages</a></li>
+          <li><a href="tour2.html">Tour Details</a></li>
+            <li><a href="tourbooking.html">Tour Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Destination Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Destination</a>
+        <ul class="dropdown">
+            <li><a href="destination1.html">Destinations</a></li>
+          <li><a href="destination2.html">Destination Details</a></li>
+          <li><a href="destinationbooking.html"> Destination Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Hotel Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Hotel</a>
+        <ul class="dropdown">
+          <li><a href="hotel.html">Hotel Packages</a></li>
+          <li><a href="hotelbooking.html">Hotel Booking</a></li>
+        </ul>
+      </li>
+
+    
+      <!-- Car Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Car</a>
+        <ul class="dropdown">
+          <li><a href="car.html">Car Packages</a></li>
+          <li><a href="carbooking.html">Car Booking</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="#testimonial">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+    
+      <li>
+        <a href="cart.html" class="cart-link" aria-label="Cart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </li>
+
+        <li>
+        <a href="login.html" target="_blank">
+          <button class="login-btn">Login / Signup</button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-image"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap hero-content">
+      <div class="hero-text">
+        <p class="promo">Save 15% off in Worldwide</p>
+        <h1>Discover the World, Travel Effortlessly</h1>
+        <p class="lead">Book tours, hotels, cars, and explore destinations—all in one place </p>
+      </div>
+
+      <!-- Search card aligned center under hero text -->
+      <form class="searchcard" onsubmit="return false;">
+        <div class="fields">
+          <input type="text" placeholder="Destination" />
+          <input type="text" placeholder="Tour Type" />
+          <input type="date" />
+        </div>
+        <button class="searchbtn">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Most Popular Tours -->
+  <section class="popular wrap">
+    <h2 class="section-title">Tours</h2>
+    <h4 class="subheading">Most Popular Tour</h4>
+    <!-- Pure CSS slider: slides are duplicated to create seamless loop -->
+    <div class="css-slider" aria-hidden="false">
+      <div class="slides">
+        <article class="tour-card">
+          <img src="https://i0.wp.com/theboutiqueadventurer.com/wp-content/uploads/2020/11/Louvre-Museum-at-Night-Paris.jpg?resize=1200%2C800&ssl=1.jpg" alt="tour 1" >
+          <div class="card-body">
+            <div class="tag">Europe, Hungary</div>
+            <h3>Discover timeless beauty in the heart of Europe</h3>
+            <div class="card-meta"><div class="rating">★ 4.8 <span class="small">/ 5</span></div><div class="price">$250</div></div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <img src= "https://museumofwander.com/wp-content/uploads/2023/06/Depositphotos_55951727_XL-scaled.jpg" alt="tour 2">
+          <div class="card-body">
+            <div class="tag">Colosseum, Rome</div>
+            <h3 > Echoes of Ancient Glory</h3>
+            <div class="card-meta"><div class="rating">★ 4.7 <span class="small">/ 5</span></div><div class="price">$350</div></div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <img src="https://neuschwansteintickets.com/images/disney-castle-neuschwanstein.jpg" alt="tour 3">
+          <div class="card-body">
+            <div class="tag">Neuschwanstein Castle, Germany</div>
+            <h3>Fairy-Tale Fortress in the Alps</h3>
+            <div class="card-meta"><div class="rating">★ 4.9 <span class="small">/ 5</span></div><div class="price">$299</div></div>
+          </div>
+        </article>
+
+        <!-- duplicate slides for smooth infinite animation -->
+        <article class="tour-card">
+          <img src="https://www.gorealtravel.com/blog/wp-content/uploads/2024/09/Hallstat-Day-trip-from-Samzburg-1204x800.jpg" alt="tour 1">
+          <div class="card-body">
+            <div class="tag">Lake Bled or Hallstatt, Slovenia/Austria</div>
+            <h3>Hallstatt – A Fairytale Village by the Mirror Laken</h3>
+            <div class="card-meta"><div class="rating">★ 4.8 <span class="small">/ 5</span></div><div class="price">$250</div></div>
+          </div>
+        </article>
+        <article class="tour-card">
+          <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?cs=srgb&dl=pexels-jaime-reimer-1376930-2662116.jpg&fm=jpg" alt="tour 2">
+          <div class="card-body">
+            <div class="tag">Europe, London</div>
+            <h3>Windsor Castle, and Bath from London</h3>
+            <div class="card-meta"><div class="rating">★ 4.7 <span class="small">/ 5</span></div><div class="price">$350</div></div>
+          </div>
+        </article>
+        <article class="tour-card">
+          <img src="tour1.jpg" alt="tour 3">
+          <div class="card-body">
+            <div class="tag">Asia, Japan</div>
+            <h3>Windsor Castle, and Bath from London</h3>
+            <div class="card-meta"><div class="rating">★ 4.9 <span class="small">/ 5</span></div><div class="price">$299</div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- slider dots - animated to match slide timing -->
+    <div class="dots">
+      <span class="dot d1"></span>
+      <span class="dot d2"></span>
+      <span class="dot d3"></span>
+    </div>
+  </section>
+
+  <!-- Top Attractions Destinations -->
+ <section class="section container">
+    <div class="section-head">
+       <h2 class="section-title">Destination</h2>
+        <h2 class="subheading">Top Attractions Destinations</h2>
+    </div>
+<br>
+    <div class="dest-grid">
+      <a class="dest big">
+        <img src="https://images.pexels.com/photos/1796715/pexels-photo-1796715.jpeg?cs=srgb&dl=pexels-chaitaastic-1796715.jpg&fm=jpg" alt="United Kingdom"/><span class="label">United Kingdom</span>
+      </a>
+      <a class="dest">
+        <img src="https://wallpapers.com/images/featured/turkey-pictures-adti9oc1zlus8bdb.jpg" alt="Turkey"/><span class="label">Turkey</span>
+      </a>
+      <a class="dest">
+        <img src="https://www.fodors.com/wp-content/uploads/2018/09/switzerland-hero.jpg" alt="Switzerland"/><span class="label">Switzerland</span>
+      </a>
+      <a class="dest tall">
+        <img src="https://www.wandering-bird.com/wp-content/uploads/2020/05/Colmar-top-city-in-France.jpg" alt="France"/><span class="label">France</span>
+      </a>
+      <a class="dest">
+        <img src="https://www.holidify.com/images/bgImages/PHI-PHI-ISLANDS.jpg" alt="Thailand"/><span class="label">Thailand</span>
+      </a>
+      <a class="dest">
+        <img src="https://www.shutterstock.com/image-photo/sydney-panoramic-image-australia-harbour-600nw-588635372.jpg" alt="Australia"/><span class="label">Australia</span>
+      </a>
+    </div>
+  </section>
+
+    <!-- Why Choose Us -->
+  <section class="why container" id="about">
+    <div class="why-grid">
+      <div class="why-image">
+        <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?cs=srgb&dl=pexels-te-lensfix-380994-1371360.jpg&fm=jpg" alt="Traveler" />
+        <button class="watch-btn">Watch Video</button>
+      </div>
+      <div class="why-content">
+         <h2 class="section-title">About us</h2>
+    <h4 class="subheading">Why Selects us For Vacation?</h4>
+        <p>Our Experiences Meet High Quality Standards Unique &amp; curated travel experiences for every traveler. We focus on safety, local guides, and unforgettable moments.</p>
+        <ul class="checklist">
+          <li>Travel Plan</li>
+          <li>Hand-picked Tour</li>
+          <li>Cheap Rates</li>
+          <li>Private Guides</li>
+          <li>Hotel booking facility</li>
+          <li>Car Booking Facility</li>
+          <li>Trustable Services</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+ <!-- testimonals -->
+
+<section class="testimonial-section"  id="testimonial">
+  <!-- LEFT: Text Slider -->
+  <div class="testimonial-content">
+     <h2 class="section-title">Testimonials</h2>
+    <h2 class="subheading">What Travelers Say</h2>
+    <div class="quote-icon">❞</div>
+
+    <div class="testimonial-text active">
+     <p> “Booking our Europe trip was effortless! Explore Ease made everything smooth and stress-free."</p>
+      <p class="author">- By Molie Rosa, Photographer</p>
+    </div>
+
+    <div class="testimonial-text">
+      <p>“This was the most beautiful travel experience I’ve ever had. Everything was perfectly organized and stress-free.”</p>
+      <p class="author">- By John Smith, Traveler</p>
+    </div>
+
+    <div class="testimonial-text">
+      <p>“I will definitely recommend this to my friends. The destinations were stunning and the guide was amazing.”</p>
+      <p class="author">- By Sarah Lee, Blogger</p>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- RIGHT: Static Images -->
+  <div class="testimonial-images">
+    <img src="https://img.freepik.com/premium-photo/beautiful-traveler-woman-is-resting-enjoying-sunset-car-active-lifestyle-tourism_217236-22813.jpg" alt="Tour 1" class="img img1">
+    <img src="https://thumbs.dreamstime.com/b/travelers-couple-look-mountain-lake-travel-active-life-concept-team-adventure-travel-mountains-region-124670377.jpg" alt="Tour 2" class="img img2">
+    <img src="https://img.freepik.com/free-photo/portrait-happy-couple_23-2147842587.jpg" alt="Tour 3" class="img img3">
+  </div>
+</section>
+   <!-- contact us -->
+    <section class="contact"  id="contact">
+ <div class="container">
+   <div class="contact-wrapper">
+  <!-- Left Side Image -->
+    <div class="contact-image">
+      <img src="callcenter.png" alt="Contact illustration">
+    </div>
+    <div class="contact-form">
+    <h2 class="section-title">Get In Touch</h2>
+    <br>
+    <p class="ctext">
+      Have questions or ideas? We’d love to hear from you. Just fill out the form and we’ll get back soon.</p>
+
+    <form class="form-box">
+      <div class="form-wrapper">
+        <div class="left4">
+          <input class="input" name="FirstName" placeholder="First Name">
+          <input class="input" name="LastName" placeholder="Last Name">
+          <input class="input" name="Email" placeholder="Email Address">
+          <input class="input" name="PhoneNumber" placeholder="Phone Number">
+        </div>
+        <textarea class="textinput" placeholder="Message"></textarea>
+      </div>
+      <button type="submit" class="send">Send</button>
+    </form>
+    </div>
+    </div>
+  </div>
+</section>
+     <!-- latest news -->
+      <section class="latest-guide">
+          <h2 class="section-title">Updates</h2>
+        <h2 class="subheading">Latest Travel Guide</h2>
+    </div>
+    <br>
+    <div class="guide-grid">
+        <div class="guide-card">
+            <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?cs=srgb&dl=pexels-jaime-reimer-1376930-2662116.jpg&fm=jpg" alt="Guide 1">
+            <h3>The Impact of Covid-19 on travel & tourism industry</h3>
+            <span>July 17, 2025 - Admin</span>
+        </div>
+        <div class="guide-card">
+            <img src="https://w0.peakpx.com/wallpaper/21/244/HD-wallpaper-gorgeous-travel-destination-rocks-house-cottage-travel-clouds-lake-mountain-flowers-nature.jpg" alt="Guide 2">
+            <h3>Exploring the hidden gems of Thailand</h3>
+            <span>July 16, 2025 - Admin</span>
+        </div>
+        <div class="guide-card">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/019/558/430/small/impressive-evening-view-of-santorini-island-picturesque-spring-sunset-on-the-famous-greek-resort-fira-greece-europe-traveling-concept-background-artistic-style-post-processed-photo.jpg" alt="Guide 3">
+            <h3>Top 10 must-visit destinations for 2025</h3>
+            <span>July 15, 2025 - Admin</span>
+        </div>
+        <div class="guide-card">
+            <img src="https://e0.pxfuel.com/wallpapers/629/552/desktop-wallpaper-beautiful-places-destination.jpg" alt="Guide 4">
+            <h3>How to travel on a budget without missing out</h3>
+            <span>July 14, 2025 - Admin</span>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Logo / About -->
+    <div class="f-col fade-col">
+      <div class="logo">Explore<span class="ease">Ease</span></div>
+      <p style="margin-top:10px; font-size:14px; color:#aaa;">
+        Explore the world with us. Discover amazing tours, hotels, and destinations tailored just for you.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+   <!-- Quick Links -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-link"></i> Quick Links</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Travel Guide</a></li>
+    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+  </ul>
+</div>
+
+<!-- Services -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-cogs"></i> Services</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Tour Packages</a></li>
+    <li><a href="#"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+    <li><a href="#"><i class="fas fa-passport"></i> Travel Insurance</a></li>
+    <li><a href="#"><i class="fas fa-user-tie"></i> Travel Assistance</a></li>
+  </ul>
+</div>
+
+
+    <!-- Newsletter -->
+    <div class="f-col fade-col">
+      <h4><i class="fas fa-envelope"></i> Newsletter</h4>
+      <p style="font-size:14px; color:#aaa;">Subscribe to get latest offers and updates.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter Your Email">
+        <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <p>&copy; 2025 ExploreEase. All Rights Reserved.</p>
+  </div>
+</footer>
+ 
+
+<script src="script.js" ></script>
+ <script src="header-footer.js"></script>
 </body>
 </html>

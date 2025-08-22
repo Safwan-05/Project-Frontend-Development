@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ExploreEase-Product Cart</title>
+  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="assets/css/header-footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body{font-family:'Poppins',sans-serif;background:#f4f6f9;margin:0;min-height:100vh;display:flex;flex-direction:column}
+    main{flex:1;padding:28px;display:flex;justify-content:center}
+    .container{width:100%;max-width:980px}
+    .hero {
+    background: url('https://i0.wp.com/awesomewallpapersblog.com/wp-content/uploads/2016/05/tranquility_wallpaper_by_miguel_santos-d8qnhp1.jpg?ssl=1') center/cover no-repeat;
+    position: relative;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 100px;
+    color: #fff;
+}
+    .card{background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.08);padding:22px}
+    h1{margin:0 0 6px}
+    .sub{color:#777;margin:0 0 18px}
+    .cart-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid #eee}
+    .cart-row .title{font-weight:600}
+    .cart-row .meta{color:#666;font-size:13px;margin-top:4px}
+    .cart-row .tag{margin-top:6px;display:inline-block;background:#f1f5ff;border:1px solid #dfe7ff;color:#3b5bdb;font-size:12px;padding:2px 8px;border-radius:999px}
+    .cart-row .price{font-weight:700}
+    .cart-row .btn{padding:8px 12px;border:0;border-radius:10px;background:#ff4d4f;color:#fff;cursor:pointer}
+    .summary{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:2px dashed #eee}
+    .summary .total{font-size:20px;font-weight:800}
+    .actions{display:flex;gap:8px}
+    .cta{display:flex;justify-content:flex-end;margin-top:18px}
+    .proceed{background:#111;color:#fff;border:0;padding:12px 18px;border-radius:12px;cursor:pointer;font-weight:700}
+    .empty{padding:28px;text-align:center;color:#666}
+    @media(max-width:600px){ .cart-row{grid-template-columns:1fr auto} .cart-row .actions{grid-column:1/-1} }
+  </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="left">
+        <span><i class="fa-solid fa-phone"></i> (000) 999-898-999</span>
+        <a href="mailto:support@exploreease.com"><i class="fa-solid fa-envelope"></i> support@exploreease.com</a>
+      </div>
+      <div class="right">
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Explore<span>Ease</span></div>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">About</a></li>
+
+      <!-- Tour Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Tour</a>
+        <ul class="dropdown">
+          <li><a href="tour1.html">Tour Packages</a></li>
+          <li><a href="tour2.html">Tour Details</a></li>
+            <li><a href="tourbooking.html">Tour Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Destination Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Destination</a>
+        <ul class="dropdown">
+            <li><a href="destination1.html">Destinations</a></li>
+          <li><a href="destination2.html">Destination Details</a></li>
+          <li><a href="destinationbooking.html"> Destination Booking</a></li>
+        </ul>
+      </li>
+
+      <!-- Hotel Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Hotel</a>
+        <ul class="dropdown">
+          <li><a href="hotel.html">Hotel Packages</a></li>
+          <li><a href="hotelbooking.html">Hotel Booking</a></li>
+        </ul>
+      </li>
+
+    
+      <!-- Car Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">Car</a>
+        <ul class="dropdown">
+          <li><a href="car.html">Car Packages</a></li>
+          <li><a href="carbooking.html">Car Booking</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="#testimonial">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+    
+      <li>
+        <a href="cart.html" class="cart-link" aria-label="Cart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </li>
+
+        <li>
+        <a href="login.html" target="_blank">
+          <button class="login-btn">Login / Signup</button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="overlay">
+    <h1 style ="font-size: 35px;">Product Cart</h1>
+  </div>
+</section>
+
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <h1>Your Cart</h1>
+        <p class="sub">Review items from Tours, Hotels, Destinations and Cars.</p>
+        <div id="cart-items"></div>
+        <div class="summary">
+          <div class="total">Grand Total: <span id="cart-grand-total">$0.00</span></div>
+          <div class="actions">
+            <button class="proceed" onclick="location.href='checkout.html'">Proceed to Checkout</button>
+            <button class="proceed" style="background:#e9ecef;color:#111" onclick="CartAPI.clearCart()">Clear Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+<!-- footer -->
+
+<footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Logo / About -->
+    <div class="f-col fade-col">
+      <div class="logo">Explore<span class="ease">Ease</span></div>
+      <p style="margin-top:10px; font-size:14px; color:#aaa;">
+        Explore the world with us. Discover amazing tours, hotels, and destinations tailored just for you.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+   <!-- Quick Links -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-link"></i> Quick Links</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+    <li><a href="#"><i class="fas fa-map-marked-alt"></i> Travel Guide</a></li>
+    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+  </ul>
+</div>
+
+<!-- Services -->
+<div class="f-col fade-col">
+  <h4><i class="fas fa-cogs"></i> Services</h4>
+  <ul>
+    <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Tour Packages</a></li>
+    <li><a href="#"><i class="fas fa-ticket-alt"></i> Bookings</a></li>
+    <li><a href="#"><i class="fas fa-passport"></i> Travel Insurance</a></li>
+    <li><a href="#"><i class="fas fa-user-tie"></i> Travel Assistance</a></li>
+  </ul>
+</div>
+
+
+    <!-- Newsletter -->
+    <div class="f-col fade-col">
+      <h4><i class="fas fa-envelope"></i> Newsletter</h4>
+      <p style="font-size:14px; color:#aaa;">Subscribe to get latest offers and updates.</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter Your Email">
+        <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <p>&copy; 2025 TravelGo. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="cart.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', CartAPI.renderCartPage);</script>
+  <script src="header-footer.js"></script>
+</body>
+</html>

@@ -382,15 +382,16 @@ nav {
   color: var(--white);
   text-align: center;
   padding: 100px 20px;
-  border-radius: var(--radius);
-  margin-top: 20px;
+  height: 400px;
+  /* border-radius: var(--radius);
+  margin-top: 20px; */
 }
 
 .hotels-hero .overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  border-radius: var(--radius);
+  /* border-radius: var(--radius); */
 }
 
 .hotels-hero h1 {
